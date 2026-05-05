@@ -1,0 +1,26 @@
+[
+    {
+        "stage": "flat_rag_build",
+        "elapsed_seconds": 22.175796792,
+        "input_tokens_est": 59297,
+        "output_tokens_est": 0,
+        "total_tokens_est": 59297,
+        "notes": "FlatRAG Chroma embedding/index build. Token estimate = corpus tokens embedded."
+    },
+    {
+        "stage": "graph_rag_triple_extraction",
+        "elapsed_seconds": 676.7872358750001,
+        "input_tokens_est": 59297,
+        "output_tokens_est": 26203,
+        "total_tokens_est": 85500,
+        "notes": "GraphRAG LLM triple extraction. Token estimate covers corpus input and triples output."
+    },
+    {
+        "stage": "graph_rag_neo4j_build",
+        "elapsed_seconds": 2.6097760839999182,
+        "input_tokens_est": 26203,
+        "output_tokens_est": 0,
+        "total_tokens_est": 26203,
+        "notes": "Neo4j graph construction from triples; no LLM token cost beyond triples input proxy."
+    }
+]

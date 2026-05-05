@@ -3,33 +3,43 @@
         "id": 1,
         "category": "single-hop",
         "question": "Where is OpenAI headquartered?",
-        "ground_truth": "San Francisco",
+        "ground_truth": "OpenAI is headquartered in San Francisco.",
         "graph_rag": {
-            "answer": "Tôi không biết OpenAI có trụ sở chính ở đâu.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 4.600993871688843,
-            "context_len": 7100
-        },
-        "flat_rag": {
-            "answer": "OpenAI có trụ sở chính tại San Francisco. Cụ thể hơn, nó từng có trụ sở tại Tòa nhà Pioneer ở Mission District, San Francisco.",
+            "answer": "OpenAI có trụ sở chính tại San Francisco.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 4.355709075927734,
-            "context_len": 2647
+            "time": 11.469612836837769,
+            "context_len": 7542
+        },
+        "flat_rag": {
+            "answer": "OpenAI có trụ sở tại Tòa nhà Pioneer ở Mission District, San Francisco.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.630387306213379,
+            "context_len": 2136
+        },
+        "hybrid_rag": {
+            "answer": "OpenAI is headquartered in San Francisco.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.587024927139282,
+            "context_len": 9645
         }
     },
     {
         "id": 2,
         "category": "single-hop",
         "question": "Who is the CEO of OpenAI?",
-        "ground_truth": "Sam Altman",
+        "ground_truth": "Sam Altman is the CEO of OpenAI.",
         "graph_rag": {
             "answer": "Sam Altman là CEO của OpenAI.",
             "metrics": {
@@ -37,86 +47,116 @@
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 4.737514019012451,
-            "context_len": 7100
+            "time": 3.900731086730957,
+            "context_len": 7709
         },
         "flat_rag": {
-            "answer": "Dựa trên ngữ cảnh được cung cấp, Sam Altman đã bị hội đồng quản trị của OpenAI loại bỏ khỏi vị trí CEO vào tháng 11 năm 2023 nhưng đã được phục hồi chức vụ 5 ngày sau đó.",
+            "answer": "Theo ngữ cảnh, Sam Altman đã bị hội đồng quản trị OpenAI loại bỏ khỏi vị trí CEO vào tháng 11 năm 2023, nhưng sau đó đã được phục chức năm ngày sau đó.",
             "metrics": {
-                "correctness": 1.0,
+                "correctness": 0.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.3954970836639404,
-            "context_len": 3008
+            "time": 4.671117067337036,
+            "context_len": 2753
+        },
+        "hybrid_rag": {
+            "answer": "Sam Altman is the chief executive officer (CEO) of OpenAI. He has held this position since 2019, and after a brief removal in November 2023, he was reinstated five days later.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 4.888631820678711,
+            "context_len": 10513
         }
     },
     {
         "id": 3,
         "category": "single-hop",
-        "question": "What products did OpenAI develop?",
-        "ground_truth": "GPT (generative pre-trained transformer), DALL-E, Sora, ChatGPT",
+        "question": "Which company developed ChatGPT?",
+        "ground_truth": "OpenAI developed ChatGPT.",
         "graph_rag": {
-            "answer": "Dựa trên thông tin từ đồ thị, tôi không có thông tin về sản phẩm mà OpenAI đã phát triển.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 5.7861058712005615,
-            "context_len": 7100
-        },
-        "flat_rag": {
-            "answer": "OpenAI đã phát triển họ mô hình ngôn ngữ lớn generative pre-trained transformer (GPT), dòng mô hình chuyển văn bản thành hình ảnh DALL-E, và dòng mô hình chuyển văn bản thành video Sora. Họ cũng đã phát hành ChatGPT vào tháng 11 năm 2022.",
+            "answer": "OpenAI đã phát triển ChatGPT.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 2.894727945327759,
-            "context_len": 2729
+            "time": 5.774366140365601,
+            "context_len": 4729
+        },
+        "flat_rag": {
+            "answer": "OpenAI đã phát triển ChatGPT.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.270838975906372,
+            "context_len": 2393
+        },
+        "hybrid_rag": {
+            "answer": "OpenAI developed ChatGPT.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 16.48445415496826,
+            "context_len": 7173
         }
     },
     {
         "id": 4,
         "category": "single-hop",
-        "question": "When was OpenAI founded?",
-        "ground_truth": "2015",
+        "question": "What is Google's parent company?",
+        "ground_truth": "Alphabet Inc. is Google's parent holding company.",
         "graph_rag": {
-            "answer": "Tôi không biết OpenAI được thành lập khi nào dựa trên thông tin trong đồ thị.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 4.688524961471558,
-            "context_len": 7100
-        },
-        "flat_rag": {
-            "answer": "OpenAI được thành lập vào tháng 12 năm 2015.",
+            "answer": "Công ty mẹ của Google là Alphabet Inc.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.1995768547058105,
-            "context_len": 2607
+            "time": 3.896367073059082,
+            "context_len": 6421
+        },
+        "flat_rag": {
+            "answer": "Công ty mẹ của Google là Alphabet Inc.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 1.8406641483306885,
+            "context_len": 2211
+        },
+        "hybrid_rag": {
+            "answer": "Google's parent company is Alphabet Inc.\n\n**Reasoning:**\nBoth the graph evidence and vector evidence explicitly state that Alphabet Inc. is Google's parent company.\n*   **Graph Evidence:** \"Google's parent company Alphabet Inc.\" and \"In 2015, Google was reorganized as a wholly owned subsidiary of Alphabet Inc.\"\n*   **Vector Evidence:** \"Google's parent company Alphabet Inc. has been described as a Big Tech company.\" and \"Alphabet Inc. ... became the parent holding company of Google and several former Google subsidiaries.\"",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.3352110385894775,
+            "context_len": 8683
         }
     },
     {
         "id": 5,
         "category": "single-hop",
         "question": "Who founded Google?",
-        "ground_truth": "Larry Page and Sergey Brin",
+        "ground_truth": "Google was founded by Larry Page and Sergey Brin.",
         "graph_rag": {
             "answer": "Google được thành lập bởi Larry Page và Sergey Brin.",
             "metrics": {
                 "correctness": 1.0,
-                "faithfulness": 0.5,
-                "no_hallucination": 0.0
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
             },
-            "time": 5.445603847503662,
-            "context_len": 6603
+            "time": 15.475120782852173,
+            "context_len": 6564
         },
         "flat_rag": {
             "answer": "Google được thành lập bởi Larry Page và Sergey Brin.",
@@ -125,180 +165,466 @@
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.562896728515625,
-            "context_len": 2708
+            "time": 2.4008309841156006,
+            "context_len": 2451
+        },
+        "hybrid_rag": {
+            "answer": "Google was founded by Larry Page and Sergey Brin. Scott Hassan was an unofficial \"third founder\" who was the original lead programmer, but he left before Google was officially founded as a company.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 6.021088123321533,
+            "context_len": 9066
         }
     },
     {
         "id": 6,
         "category": "single-hop",
-        "question": "What cloud platform does OpenAI use?",
-        "ground_truth": "Microsoft Azure",
+        "question": "Who is the CEO of Alphabet Inc.?",
+        "ground_truth": "Sundar Pichai is the CEO of Alphabet Inc.",
         "graph_rag": {
-            "answer": "Tôi không biết. Thông tin trong đồ thị không chỉ ra OpenAI sử dụng nền tảng đám mây nào.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 8.096901893615723,
-            "context_len": 7100
-        },
-        "flat_rag": {
-            "answer": "OpenAI sử dụng nền tảng đám mây Microsoft Azure.",
+            "answer": "Sundar Pichai là Giám đốc điều hành (CEO) của Alphabet Inc.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.088296890258789,
-            "context_len": 3038
+            "time": 6.879248857498169,
+            "context_len": 9078
+        },
+        "flat_rag": {
+            "answer": "Chief Executive của Alphabet Inc. là Sundar Pichai.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.077960968017578,
+            "context_len": 2802
+        },
+        "hybrid_rag": {
+            "answer": "Sundar Pichai is the CEO of Alphabet Inc. He became CEO in December 2019. Larry Page was a former CEO of Alphabet Inc. from 2015 to 2018.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.990844249725342,
+            "context_len": 11931
         }
     },
     {
         "id": 7,
         "category": "single-hop",
-        "question": "Who is the CEO of Alphabet Inc.?",
-        "ground_truth": "Sundar Pichai",
+        "question": "Which AI models are Anthropic's flagship product line?",
+        "ground_truth": "Anthropic's flagship product line is the Claude series of large language models.",
         "graph_rag": {
-            "answer": "Dựa trên thông tin được cung cấp, có hai cá nhân được đề cập là CEO của Alphabet Inc.: Sergey Brin và Larry Page. Do đó, không thể xác định một CEO duy nhất từ đồ thị này.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 14.130434036254883,
-            "context_len": 6761
-        },
-        "flat_rag": {
-            "answer": "CEO của Alphabet Inc. là Sundar Pichai.",
+            "answer": "Dòng sản phẩm chủ lực của Anthropic là chuỗi các mô hình ngôn ngữ lớn \"Claude\".",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 1.8648271560668945,
-            "context_len": 2719
+            "time": 3.68583607673645,
+            "context_len": 7896
+        },
+        "flat_rag": {
+            "answer": "Dòng sản phẩm chủ lực của Anthropic là chuỗi các mô hình ngôn ngữ lớn \"Claude\".",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.7390377521514893,
+            "context_len": 3093
+        },
+        "hybrid_rag": {
+            "answer": "Anthropic's flagship product line is the \"Claude\" series of large language models.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.923275947570801,
+            "context_len": 11040
         }
     },
     {
         "id": 8,
         "category": "single-hop",
-        "question": "What is the parent company of Google?",
-        "ground_truth": "Alphabet Inc.",
+        "question": "Who are the co-founders and leaders of Anthropic mentioned in the corpus?",
+        "ground_truth": "Anthropic was founded by former OpenAI members including siblings Daniela Amodei and Dario Amodei; Daniela Amodei is president and Dario Amodei is CEO.",
         "graph_rag": {
-            "answer": "Công ty mẹ của Google là Alphabet Inc.",
+            "answer": "Các nhà đồng sáng lập và lãnh đạo của Anthropic được đề cập trong ngữ liệu là Dario Amodei (CEO) và Daniela Amodei (chủ tịch).",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.7336931228637695,
-            "context_len": 6603
+            "time": 5.389874219894409,
+            "context_len": 7466
         },
         "flat_rag": {
-            "answer": "Công ty mẹ của Google là Alphabet Inc.",
+            "answer": "Các đồng sáng lập và lãnh đạo của Anthropic được đề cập trong ngữ cảnh là Daniela Amodei (chủ tịch) và Dario Amodei (CEO).",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 2.2336559295654297,
-            "context_len": 2495
+            "time": 3.9527881145477295,
+            "context_len": 2002
+        },
+        "hybrid_rag": {
+            "answer": "Dario Amodei and Daniela Amodei are the co-founders of Anthropic. Dario Amodei serves as the CEO, and Daniela Amodei is the President.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 8.17127275466919,
+            "context_len": 9615
         }
     },
     {
         "id": 9,
         "category": "single-hop",
-        "question": "What quantum computing chip did Alphabet unveil in December 2024?",
-        "ground_truth": "Willow",
+        "question": "Which company develops GPUs and CUDA and is headquartered in Santa Clara?",
+        "ground_truth": "Nvidia develops GPUs and CUDA and is headquartered in Santa Clara, California.",
         "graph_rag": {
-            "answer": "Tôi không có thông tin về việc Alphabet đã công bố chip điện toán lượng tử nào vào tháng 12 năm 2024 trong ngữ cảnh được cung cấp.",
+            "answer": "Nvidia Corporation phát triển GPU và CUDA, đồng thời có trụ sở chính tại Santa Clara, California.",
             "metrics": {
                 "correctness": 0.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 8.11960220336914,
-            "context_len": 2547
+            "time": 3.598865270614624,
+            "context_len": 7964
         },
         "flat_rag": {
-            "answer": "Alphabet đã ra mắt chip điện toán lượng tử mới có tên là Willow vào tháng 12 năm 2024.",
+            "answer": "Tôi không biết. Ngữ cảnh được cung cấp không đề cập đến CUDA.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.3158280849456787,
+            "context_len": 3777
+        },
+        "hybrid_rag": {
+            "answer": "Nvidia Corporation develops GPUs and CUDA, and is headquartered in Santa Clara, California.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 2.764418840408325,
-            "context_len": 2793
+            "time": 14.908000946044922,
+            "context_len": 11792
         }
     },
     {
         "id": 10,
         "category": "single-hop",
-        "question": "Who are the co-founders of OpenAI besides Sam Altman?",
-        "ground_truth": "Elon Musk, Ilya Sutskever, Greg Brockman, Trevor Blackwell, Vicki Cheung, Andrej Karpathy, Durk Kingma, John Schulman, Pamela Vagata, Wojciech Zaremba",
+        "question": "What architecture did Databricks develop for managing structured and unstructured data?",
+        "ground_truth": "Databricks developed the data lakehouse architecture.",
         "graph_rag": {
-            "answer": "Ngoài Sam Altman, các đồng sáng lập của OpenAI là:\n*   Elon Musk\n*   Wojciech Zaremba\n*   Durk Kingma\n*   John Schulman\n*   Greg Brockman\n*   Pamela Vagata\n*   Trevor Blackwell\n*   Ilya Sutskever\n*   Vicki Cheung\n*   Andrej Karpathy",
+            "answer": "Databricks đã phát triển kiến trúc 'data lakehouse' để quản lý dữ liệu có cấu trúc và phi cấu trúc.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 5.531927824020386,
-            "context_len": 13810
+            "time": 3.6381659507751465,
+            "context_len": 8062
         },
         "flat_rag": {
-            "answer": "Ngoài Sam Altman, các đồng sáng lập của OpenAI bao gồm:\n\n*   Greg Brockman\n*   Elon Musk\n*   Jessica Livingston\n*   Peter Thiel\n*   Microsoft\n*   Amazon Web Services\n*   Infosys\n*   YC Research\n*   Ilya Sutskever\n*   Trevor Blackwell\n*   Vicki Cheung\n*   Andrej Karpathy\n*   Durk Kingma\n*   John Schulman\n*   Pamela Vagata\n*   Wojciech Zaremba",
+            "answer": "Databricks đã phát triển kiến trúc 'data lakehouse' để quản lý dữ liệu có cấu trúc và không có cấu trúc.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 4.52883505821228,
-            "context_len": 2585
+            "time": 2.1971850395202637,
+            "context_len": 2662
+        },
+        "hybrid_rag": {
+            "answer": "Databricks developed the 'data lakehouse' architecture, which combines elements of data warehouses and data lakes for managing structured and unstructured data.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.8262388706207275,
+            "context_len": 10689
         }
     },
     {
         "id": 11,
         "category": "multi-hop",
         "question": "Who is the CEO of the company that developed ChatGPT?",
-        "ground_truth": "Sam Altman (CEO of OpenAI, which developed ChatGPT)",
+        "ground_truth": "Sam Altman is the CEO of OpenAI, and OpenAI developed ChatGPT.",
         "graph_rag": {
-            "answer": "Dựa trên thông tin từ đồ thị, Sam Altman là CEO của OpenAI, công ty đã phát triển ChatGPT.",
+            "answer": "Sam Altman là CEO của công ty đã phát triển ChatGPT (OpenAI).",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 5.465618133544922,
-            "context_len": 3140
+            "time": 6.412255764007568,
+            "context_len": 4749
         },
         "flat_rag": {
-            "answer": "Sam Altman là Giám đốc điều hành (CEO) của OpenAI, công ty đã phát triển ChatGPT.",
+            "answer": "Tôi không biết. Thông tin về CEO của công ty phát triển ChatGPT không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.0472068786621094,
+            "context_len": 2474
+        },
+        "hybrid_rag": {
+            "answer": "Sam Altman is the CEO of OpenAI, the company that developed ChatGPT.",
             "metrics": {
                 "correctness": 1.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 2.748274326324463,
-            "context_len": 2813
+            "time": 4.434509038925171,
+            "context_len": 7274
         }
     },
     {
         "id": 12,
         "category": "multi-hop",
-        "question": "Which company invested over $13 billion into the developer of DALL-E?",
-        "ground_truth": "Microsoft (invested $13B+ into OpenAI, which developed DALL-E)",
+        "question": "Which company invested more than $13 billion into the company that developed DALL-E?",
+        "ground_truth": "Microsoft invested more than $13 billion into OpenAI, which developed DALL-E.",
         "graph_rag": {
-            "answer": "Tôi không biết. Thông tin về công ty đã đầu tư hơn 13 tỷ đô la vào nhà phát triển của DALL-E không có trong đồ thị được cung cấp. Đồ thị chỉ cho biết OpenAI đã đầu tư vào các thực thể khác, chứ không phải ai đã đầu tư vào OpenAI.",
+            "answer": "Microsoft đã đầu tư hơn 13 tỷ đô la vào OpenAI, công ty đã phát triển DALL-E.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 11.614595890045166,
+            "context_len": 7388
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin này không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.176426887512207,
+            "context_len": 2766
+        },
+        "hybrid_rag": {
+            "answer": "Microsoft invested more than $13 billion into OpenAI, the company that developed DALL-E.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 6.353318691253662,
+            "context_len": 6503
+        }
+    },
+    {
+        "id": 13,
+        "category": "multi-hop",
+        "question": "What cloud platform does the developer of GPT use for computing resources?",
+        "ground_truth": "OpenAI developed GPT and uses Microsoft Azure cloud computing resources.",
+        "graph_rag": {
+            "answer": "Nhà phát triển của GPT là OpenAI sử dụng nền tảng đám mây Azure cho các tài nguyên điện toán.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.632089853286743,
+            "context_len": 5001
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin về nền tảng đám mây mà nhà phát triển GPT sử dụng cho tài nguyên điện toán không có trong ngữ cảnh được cung cấp.",
             "metrics": {
                 "correctness": 0.0,
                 "faithfulness": 1.0,
-                "no_hallucination": 0.8
+                "no_hallucination": 1.0
             },
-            "time": 6.283243894577026,
-            "context_len": 2152
+            "time": 3.0143120288848877,
+            "context_len": 2623
+        },
+        "hybrid_rag": {
+            "answer": "OpenAI, the developer of GPT, uses Azure cloud computing resources.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.263634920120239,
+            "context_len": 11065
+        }
+    },
+    {
+        "id": 14,
+        "category": "multi-hop",
+        "question": "Who is the CEO of the parent company of Google?",
+        "ground_truth": "Sundar Pichai is the CEO of Alphabet Inc., Google's parent company.",
+        "graph_rag": {
+            "answer": "CEO của công ty mẹ của Google là Sundar Pichai.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 6.320175647735596,
+            "context_len": 6505
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin về CEO của công ty mẹ của Google không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.5015220642089844,
+            "context_len": 2341
+        },
+        "hybrid_rag": {
+            "answer": "The CEO of Google's parent company, Alphabet Inc., is Sundar Pichai.\n\n**Reasoning:**\n*   The graph evidence and vector evidence both state that Alphabet Inc. is the parent company of Google.\n*   The \"Wikipedia - Sundar Pichai\" source explicitly states: \"Pichai Sundararajan... better known as Sundar Pichai... has been the CEO of Google since 2015 and the CEO of its parent company Alphabet Inc.\"\n*   This is further supported by the `SOURCE_EVIDENCE` in the graph section: \"Sundar Pichai was appointed CEO of Google in 2015, replacing Larry Page, who became the CEO of Alphabet.\" (And then Sundar Pichai also became CEO of Alphabet).",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 9.031070947647095,
+            "context_len": 8897
+        }
+    },
+    {
+        "id": 15,
+        "category": "multi-hop",
+        "question": "Which company acquired DeepMind, and which larger holding company does DeepMind serve as a subsidiary of?",
+        "ground_truth": "Google acquired DeepMind, and Google DeepMind serves as a subsidiary of Alphabet Inc.",
+        "graph_rag": {
+            "answer": "Google đã mua lại DeepMind, và DeepMind là công ty con của Alphabet Inc.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.849328994750977,
+            "context_len": 6879
+        },
+        "flat_rag": {
+            "answer": "DeepMind được Google mua lại vào năm 2014 và là công ty con của Alphabet Inc.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.4531917572021484,
+            "context_len": 2319
+        },
+        "hybrid_rag": {
+            "answer": "DeepMind was acquired by **Google**. It serves as a subsidiary of **Alphabet Inc.**",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 9.26756501197815,
+            "context_len": 8745
+        }
+    },
+    {
+        "id": 16,
+        "category": "multi-hop",
+        "question": "Who founded the company that developed AlphaGo?",
+        "ground_truth": "DeepMind developed AlphaGo; DeepMind was founded by Demis Hassabis, Shane Legg, and Mustafa Suleyman.",
+        "graph_rag": {
+            "answer": "Công ty phát triển AlphaGo là DeepMind Technologies Limited (hoặc DeepMind). Công ty này được thành lập bởi Mustafa Suleyman, Shane Legg và Demis Hassabis.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.4931089878082275,
+            "context_len": 5953
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin về người sáng lập công ty phát triển AlphaGo không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.7583060264587402,
+            "context_len": 2928
+        },
+        "hybrid_rag": {
+            "answer": "DeepMind, the company that developed AlphaGo, was founded by Mustafa Suleyman, Shane Legg, and Demis Hassabis.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 6.972014904022217,
+            "context_len": 9188
+        }
+    },
+    {
+        "id": 17,
+        "category": "multi-hop",
+        "question": "Which company invested in Anthropic and also provides the cloud service used by Anthropic as its primary cloud provider?",
+        "ground_truth": "Amazon invested in Anthropic, and Anthropic uses Amazon Web Services (AWS) as its primary cloud provider.",
+        "graph_rag": {
+            "answer": "Không có công ty nào đầu tư vào Anthropic đồng thời cung cấp dịch vụ đám mây chính mà Anthropic sử dụng. Anthropic sử dụng Amazon Web Services (AWS) làm nhà cung cấp đám mây chính.",
+            "metrics": {
+                "correctness": 0.1,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 12.449164867401123,
+            "context_len": 7810
+        },
+        "flat_rag": {
+            "answer": "Công ty đã đầu tư vào Anthropic và cũng cung cấp dịch vụ đám mây chính cho Anthropic là Amazon.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.442300796508789,
+            "context_len": 3374
+        },
+        "hybrid_rag": {
+            "answer": "Amazon invested in Anthropic and provides Amazon Web Services (AWS), which Anthropic uses as its primary cloud provider.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 19.328956842422485,
+            "context_len": 11118
+        }
+    },
+    {
+        "id": 18,
+        "category": "multi-hop",
+        "question": "Which AI company founded by former OpenAI employees later partnered with Google for up to one million TPUs?",
+        "ground_truth": "Anthropic was founded by former OpenAI employees and later announced a cloud partnership with Google giving it access to up to one million Google TPUs.",
+        "graph_rag": {
+            "answer": "Anthropic.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.893659830093384,
+            "context_len": 8750
         },
         "flat_rag": {
             "answer": "Tôi không biết.",
@@ -307,216 +633,450 @@
                 "faithfulness": 0.0,
                 "no_hallucination": 1.0
             },
-            "time": 2.8186278343200684,
-            "context_len": 2335
-        }
-    },
-    {
-        "id": 13,
-        "category": "multi-hop",
-        "question": "What cloud platform does the company that created GPT models use for its infrastructure?",
-        "ground_truth": "Microsoft Azure (OpenAI created GPT and uses Azure)",
-        "graph_rag": {
-            "answer": "Xin lỗi, tôi không tìm thấy thông tin liên quan trong đồ thị tri thức.",
+            "time": 2.3030519485473633,
+            "context_len": 2319
+        },
+        "hybrid_rag": {
+            "answer": "Anthropic, an AI company founded by former OpenAI employees Dario Amodei and Daniela Amodei, later partnered with Google. In October 2025, Anthropic announced a cloud partnership with Google, gaining access to up to one million of Google's custom Tensor Processing Units (TPUs).",
             "metrics": {
                 "correctness": 0.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 3.4550318717956543,
-            "context_len": 0
-        },
-        "flat_rag": {
-            "answer": "Tôi không biết. Thông tin về nền tảng đám mây mà công ty tạo ra các mô hình GPT sử dụng cho cơ sở hạ tầng của họ không có trong ngữ cảnh được cung cấp.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 2.944251298904419,
-            "context_len": 2895
-        }
-    },
-    {
-        "id": 14,
-        "category": "multi-hop",
-        "question": "Who is the CEO of the parent company that owns Google?",
-        "ground_truth": "Sundar Pichai (CEO of Alphabet Inc., which owns Google)",
-        "graph_rag": {
-            "answer": "Dựa trên thông tin trong đồ thị:\n\nAlphabet Inc. là công ty mẹ sở hữu Google.\nSundar Pichai là CEO của Alphabet Inc.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 4.915729999542236,
-            "context_len": 6603
-        },
-        "flat_rag": {
-            "answer": "Sundar Pichai.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 3.1568820476531982,
-            "context_len": 2775
-        }
-    },
-    {
-        "id": 15,
-        "category": "multi-hop",
-        "question": "Which company co-founded by Elon Musk is headquartered in San Francisco and works on AI safety?",
-        "ground_truth": "OpenAI (co-founded by Elon Musk, headquartered in San Francisco, focused on AI safety and AGI)",
-        "graph_rag": {
-            "answer": "Dựa trên thông tin từ đồ thị:\n- Elon Musk CO_FOUNDED OpenAI.\n- OpenAI HEADQUARTERED_IN San Francisco.\n- OpenAI DEVELOPED Sora, generative pre-trained transformer (GPT), DALL-E, ChatGPT, đây là các sản phẩm liên quan đến AI. Mặc dù đồ thị không trực tiếp nói \"works on AI safety\", nhưng OpenAI là một tổ chức nổi tiếng về nghiên cứu và phát triển AI, bao gồm cả các khía cạnh an toàn của AI.\n\nVì vậy, công ty đó là **OpenAI**.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 0.8,
-                "no_hallucination": 0.7
-            },
-            "time": 5.810593843460083,
-            "context_len": 6663
-        },
-        "flat_rag": {
-            "answer": "Tôi không biết. Ngữ cảnh được cung cấp không nói rõ công ty nào được Elon Musk đồng sáng lập, có trụ sở tại San Francisco và hoạt động về an toàn AI. Mặc dù có đề cập đến mối quan tâm của Elon Musk về an toàn AI và sau đó là sứ mệnh của OpenAI, nhưng không có thông tin trực tiếp nói rằng ông là người đồng sáng lập OpenAI trong ngữ cảnh này.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 0.9,
-                "no_hallucination": 1.0
-            },
-            "time": 6.17615270614624,
-            "context_len": 2544
-        }
-    },
-    {
-        "id": 16,
-        "category": "multi-hop",
-        "question": "What percentage stake does Microsoft hold in the company that released ChatGPT after its 2025 restructuring?",
-        "ground_truth": "Microsoft holds a 27% stake in OpenAI Group PBC (the company behind ChatGPT) after the 2025 restructuring",
-        "graph_rag": {
-            "answer": "Tôi không có thông tin về tỷ lệ phần trăm cổ phần mà Microsoft nắm giữ trong công ty đã phát hành ChatGPT sau khi tái cơ cấu vào năm 2025.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 0.0
-            },
-            "time": 6.003552198410034,
-            "context_len": 10807
-        },
-        "flat_rag": {
-            "answer": "Sau khi tái cấu trúc vào năm 2025, Microsoft nắm giữ 27% cổ phần trong OpenAI Group PBC.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 2.9755032062530518,
-            "context_len": 2967
-        }
-    },
-    {
-        "id": 17,
-        "category": "multi-hop",
-        "question": "Who replaced Larry Page as CEO of Google after the Alphabet restructuring in 2015?",
-        "ground_truth": "Sundar Pichai replaced Larry Page as CEO of Google when Alphabet was created in 2015",
-        "graph_rag": {
-            "answer": "Dựa trên thông tin từ đồ thị:\n\n*   Larry Page là CEO của Google (\"Google CEO_OF Larry Page\").\n*   Alphabet Inc. được thành lập vào năm 2015 (\"Alphabet Inc. FOUNDED_IN 2015\").\n*   Sundar Pichai là CEO của Google (\"Google CEO_OF Sundar Pichai\").\n\nTừ các thông tin này, có thể suy luận rằng Sundar Pichai đã thay thế Larry Page làm CEO của Google sau khi Alphabet được tái cấu trúc vào năm 2015.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 0.7,
-                "no_hallucination": 1.0
-            },
-            "time": 7.243703126907349,
-            "context_len": 16057
-        },
-        "flat_rag": {
-            "answer": "Sundar Pichai đã thay thế Larry Page làm CEO của Google sau khi Alphabet được tái cấu trúc vào năm 2015.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 4.929725170135498,
-            "context_len": 2985
-        }
-    },
-    {
-        "id": 18,
-        "category": "complex-reasoning",
-        "question": "Trace the chain: Who is the CEO of the company that developed the AI model powering Microsoft Copilot, and what cloud platform does that company use?",
-        "ground_truth": "Sam Altman is CEO of OpenAI, which developed the GPT models powering Microsoft Copilot. OpenAI uses Microsoft Azure for its cloud infrastructure.",
-        "graph_rag": {
-            "answer": "Xin lỗi, tôi không tìm thấy thông tin liên quan trong đồ thị tri thức.",
-            "metrics": {
-                "correctness": 0.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 2.795340061187744,
-            "context_len": 0
-        },
-        "flat_rag": {
-            "answer": "Công ty đã phát triển mô hình AI cung cấp năng lượng cho Microsoft Copilot là OpenAI.\n\nOpenAI sử dụng nền tảng đám mây Microsoft Azure.\n\nThông tin về CEO của OpenAI không có trong ngữ cảnh được cung cấp.",
-            "metrics": {
-                "correctness": 1.0,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 3.935288190841675,
-            "context_len": 3306
+            "time": 9.667594909667969,
+            "context_len": 11120
         }
     },
     {
         "id": 19,
-        "category": "complex-reasoning",
-        "question": "OpenAI was co-founded by someone who also leads SpaceX and Tesla. This person also invested in OpenAI. Who is this person, and what was OpenAI's stated mission regarding AGI?",
-        "ground_truth": "Elon Musk co-founded and invested in OpenAI. He leads SpaceX and Tesla. OpenAI's mission was ensuring that AGI 'benefits all of humanity'.",
+        "category": "multi-hop",
+        "question": "Which company founded by original creators of Apache Spark partnered with OpenAI in a $100 million deal?",
+        "ground_truth": "Databricks was founded by original creators of Apache Spark and entered a $100 million partnership with OpenAI to incorporate OpenAI's LLMs into its platform.",
         "graph_rag": {
-            "answer": "Người này là Elon Musk.\n\nThông tin về sứ mệnh đã nêu của OpenAI liên quan đến AGI không có trong đồ thị được cung cấp.",
+            "answer": "Databricks.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 10.10784101486206,
+            "context_len": 7925
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin về việc công ty được thành lập bởi những người tạo ra Apache Spark hợp tác với OpenAI trong một thỏa thuận trị giá 100 triệu đô la không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.328194856643677,
+            "context_len": 2790
+        },
+        "hybrid_rag": {
+            "answer": "Databricks, founded by the original creators of Apache Spark, partnered with OpenAI in a $100 million deal.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.311316967010498,
+            "context_len": 10676
+        }
+    },
+    {
+        "id": 20,
+        "category": "multi-hop",
+        "question": "Which company invested $16 million in Mistral AI, and what country is Mistral AI based in?",
+        "ground_truth": "Microsoft invested $16 million in Mistral AI, which is a French AI company headquartered in Paris.",
+        "graph_rag": {
+            "answer": "Microsoft đã đầu tư 16 triệu đô la vào Mistral AI. Thông tin về quốc gia đặt trụ sở của Mistral AI không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.210690975189209,
+            "context_len": 7479
+        },
+        "flat_rag": {
+            "answer": "Microsoft đã đầu tư 16 triệu đô la vào Mistral AI. Mistral AI là một công ty của Pháp.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.8480470180511475,
+            "context_len": 3790
+        },
+        "hybrid_rag": {
+            "answer": "Microsoft invested $16 million in Mistral AI. Mistral AI is based in France.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.186485052108765,
+            "context_len": 11320
+        }
+    },
+    {
+        "id": 21,
+        "category": "complex-reasoning",
+        "question": "Compare Microsoft's relationships with OpenAI and Mistral AI using investment amount and strategic role.",
+        "ground_truth": "Microsoft invested over $13 billion into OpenAI and provides Azure cloud computing resources, making the OpenAI relationship deep and infrastructure-heavy. Microsoft invested $16 million in Mistral AI, which is much smaller and described as an investment rather than the same large cloud-infrastructure partnership.",
+        "graph_rag": {
+            "answer": "Microsoft có mối quan hệ đầu tư và chiến lược sâu rộng hơn với OpenAI so với Mistral AI.\n\n**Với OpenAI:**\n*   **Số tiền đầu tư:** Microsoft đã đầu tư khoảng 3 tỷ USD tính đến năm 2022 và hiện nắm giữ 27% cổ phần trong OpenAI Group PBC, với giá trị ước tính 135 tỷ USD.\n*   **Vai trò chiến lược:** Các dịch vụ của OpenAI đã được chuyển sang Microsoft Azure, cho thấy một sự tích hợp chiến lược sâu sắc về cơ sở hạ tầng đám mây.\n\n**Với Mistral AI:**\n*   **Số tiền đầu tư:** Microsoft đã công bố khoản đầu tư 16 triệu USD vào Mistral AI vào ngày 26 tháng 2 năm 2024.\n*   **Vai trò chiến lược:** Thông tin được cung cấp không nêu chi tiết vai trò chiến lược cụ thể nào ngoài khoản đầu tư tài chính.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 0.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.274735927581787,
+            "context_len": 7526
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp:\n\n*   **Mối quan hệ của Microsoft với Mistral AI:**\n    *   **Số tiền đầu tư:** Vào ngày 26 tháng 2 năm 2024, Microsoft đã công bố khoản đầu tư 16 triệu đô la vào Mistral AI.\n    *   **Vai trò chiến lược:** Ngữ cảnh không cung cấp thông tin về vai trò chiến lược của Microsoft với Mistral AI.\n\n*   **Mối quan hệ của Microsoft với OpenAI:**\n    *   Ngữ cảnh không cung cấp bất kỳ thông tin nào về mối quan hệ của Microsoft với OpenAI, bao gồm số tiền đầu tư hay vai trò chiến lược.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 4.63113808631897,
+            "context_len": 3558
+        },
+        "hybrid_rag": {
+            "answer": "Microsoft's relationships with OpenAI and Mistral AI differ significantly in both investment amount and strategic depth.\n\n**OpenAI:**\n*   **Investment Amount:** Microsoft initially invested $1 billion in OpenAI LP, and by 2022, their total investment reached approximately $3 billion. Following OpenAI's 2025 restructuring, Microsoft holds a 27% stake in the for-profit OpenAI Group PBC, which was valued at $135 billion.\n*   **Strategic Role:** Microsoft is a major strategic partner. OpenAI's services were migrated to Microsoft Azure, indicating a deep technological integration and cloud partnership. Microsoft also holds a significant ownership stake in the for-profit entity.\n\n**Mistral AI:**\n*   **Investment Amount:** On February 26, 2024, Microsoft announced an investment of $16 million in Mistral AI.\n*   **Strategic Role:** Microsoft is an investor in Mistral AI. However, the provided context does not detail a broader strategic role beyond this financial investment, such as cloud integration or specific product partnerships, unlike its relationship with OpenAI.\n\n**Comparison:**\nMicrosoft's investment in OpenAI is substantially larger, totaling billions of dollars and resulting in a significant ownership stake and deep technological integration with Azure. In contrast, Microsoft's investment in Mistral AI is a much smaller, $16 million investment, and the available information does not indicate a comparable strategic partnership or integration beyond the financial backing.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.447582960128784,
+            "context_len": 11135
+        }
+    },
+    {
+        "id": 22,
+        "category": "complex-reasoning",
+        "question": "How do OpenAI and Anthropic differ in origin, leadership, and flagship products?",
+        "ground_truth": "OpenAI was founded in 2015 by founders including Sam Altman and Elon Musk and is led by CEO Sam Altman; it developed products such as GPT, DALL-E, Sora, and ChatGPT. Anthropic was founded in 2021 by former OpenAI employees including Daniela and Dario Amodei; Dario Amodei is CEO, Daniela Amodei is president, and its flagship product line is Claude.",
+        "graph_rag": {
+            "answer": "OpenAI được đồng sáng lập bởi Sam Altman và Elon Musk, với Sam Altman là CEO và đã phát triển các sản phẩm như GPT và ChatGPT.\n\nAnthropic được thành lập bởi Dario Amodei và đồng sáng lập bởi Daniela Amodei, cả hai đều từng làm việc tại OpenAI. Ngữ cảnh không nêu rõ các sản phẩm chủ lực cụ thể của Anthropic, nhưng có đề cập đến \"các sản phẩm AI của Anthropic\" được Databricks tích hợp.",
             "metrics": {
                 "correctness": 0.5,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 8.654856204986572,
-            "context_len": 12175
+            "time": 6.334566116333008,
+            "context_len": 7267
         },
         "flat_rag": {
-            "answer": "Người đồng sáng lập OpenAI, đồng thời là người đứng đầu SpaceX và Tesla, và cũng đã đầu tư vào OpenAI là **Elon Musk**.\n\nNhiệm vụ đã nêu của OpenAI liên quan đến AGI (trí tuệ nhân tạo cấp độ con người) là:\n*   AI \"nên là một phần mở rộng của ý chí cá nhân con người và, theo tinh thần tự do, được phân phối rộng rãi và đồng đều nhất có thể\".\n*   Khi AI cấp độ con người đạt được, \"điều quan trọng là phải có một tổ chức nghiên cứu hàng đầu có thể ưu tiên một kết quả tốt cho tất cả mọi người hơn là lợi ích riêng của mình.\"",
+            "answer": "Về nguồn gốc:\n*   Anthropic được thành lập vào năm 2021 bởi các cựu thành viên của OpenAI, bao gồm anh chị em Daniela Amodei và Dario Amodei.\n\nVề lãnh đạo:\n*   Anthropic: Daniela Amodei là Chủ tịch và Dario Amodei là Giám đốc điều hành. Dario Amodei từng là Phó Chủ tịch Nghiên cứu của OpenAI.\n*   Ngữ cảnh không cung cấp thông tin về ban lãnh đạo hiện tại của OpenAI.\n\nVề sản phẩm chủ lực:\n*   Anthropic: Đã phát triển một loạt các mô hình ngôn ngữ lớn (LLM) có tên là Claude.\n*   Ngữ cảnh không cung cấp thông tin về các sản phẩm chủ lực của OpenAI.",
             "metrics": {
-                "correctness": 1.0,
+                "correctness": 0.3,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 4.477224826812744,
-            "context_len": 3337
-        }
-    },
-    {
-        "id": 20,
-        "category": "complex-reasoning",
-        "question": "Alphabet and OpenAI both have connections to Microsoft. How does Microsoft's relationship differ with each of these two companies?",
-        "ground_truth": "Microsoft invested over $13 billion into OpenAI and holds a 27% stake in OpenAI Group PBC, providing Azure cloud resources. Alphabet is a competitor to Microsoft (rival tech giants); Microsoft does not have an investment relationship with Alphabet.",
-        "graph_rag": {
-            "answer": "Dựa trên thông tin từ đồ thị:\n\n*   **Mối quan hệ giữa Microsoft và OpenAI:** Microsoft đã **ĐẦU TƯ VÀO (INVESTED_IN)** OpenAI.\n*   **Mối quan hệ giữa Microsoft và Alphabet:** Đồ thị không cung cấp thông tin nào về mối quan hệ giữa Microsoft và Alphabet.",
-            "metrics": {
-                "correctness": 0.2,
-                "faithfulness": 1.0,
-                "no_hallucination": 1.0
-            },
-            "time": 8.555662155151367,
-            "context_len": 17315
+            "time": 6.502669095993042,
+            "context_len": 2204
         },
-        "flat_rag": {
-            "answer": "Tôi không biết. Ngữ cảnh được cung cấp không đề cập đến Alphabet.",
+        "hybrid_rag": {
+            "answer": "OpenAI and Anthropic differ in their origins, leadership, and flagship products:\n\n**Origin:**\n*   **Anthropic** was founded in 2021 by former members of OpenAI, including siblings Daniela Amodei and Dario Amodei. Dario Amodei was previously OpenAI's Vice President of Research.\n*   **OpenAI** was co-founded by individuals such as Sam Altman and Elon Musk.\n\n**Leadership:**\n*   **Anthropic** is led by Dario Amodei as CEO and Daniela Amodei as President.\n*   **OpenAI** has Sam Altman as its CEO.\n\n**Flagship Products:**\n*   **Anthropic** has developed a range of large language models (LLMs) named Claude.\n*   **OpenAI** developed GPT and ChatGPT.",
             "metrics": {
                 "correctness": 0.0,
                 "faithfulness": 1.0,
                 "no_hallucination": 1.0
             },
-            "time": 1.864898920059204,
-            "context_len": 3236
+            "time": 4.21271014213562,
+            "context_len": 9522
+        }
+    },
+    {
+        "id": 23,
+        "category": "complex-reasoning",
+        "question": "Trace the Alphabet AI chain from Google to DeepMind to Gemini, and explain why GraphRAG should retrieve this better than Flat RAG.",
+        "ground_truth": "Google acquired DeepMind in 2014; DeepMind became Google DeepMind and serves under Alphabet Inc. Google DeepMind became responsible for developing Gemini and other generative AI tools. GraphRAG can connect Google, DeepMind, Alphabet, and Gemini through relationships, while Flat RAG may miss parts if they are split across chunks.",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin được cung cấp:\n\n1.  **Alphabet Inc** đã **ACQUIRED** (mua lại) **Google**.\n2.  **Google** đã **ACQUIRED** (mua lại) **DeepMind**.\n3.  **DeepMind** đã **DEVELOPED** (phát triển) **Gemini**.\n\nDo đó, chuỗi AI từ Alphabet đến Gemini là: Alphabet Inc mua lại Google, Google mua lại DeepMind, và DeepMind phát triển Gemini.\n\n**Tại sao GraphRAG tốt hơn Flat RAG cho câu hỏi này:**\n\n*   **Flat RAG** sẽ tìm kiếm các đoạn văn bản riêng lẻ có thể đề cập đến từng mối quan hệ (ví dụ: \"Alphabet mua Google\", \"Google mua DeepMind\", \"DeepMind phát triển Gemini\"). Để kết nối chúng thành một chuỗi logic, Flat RAG cần thêm một lớp suy luận phức tạp hoặc may mắn tìm được một văn bản duy nhất mô tả toàn bộ chuỗi.\n*   **GraphRAG** vượt trội vì nó lưu trữ thông tin dưới dạng các nút (thực thể) và cạnh (mối quan hệ) được kết nối rõ ràng. Câu hỏi này yêu cầu \"truy tìm chuỗi\", điều mà GraphRAG có thể thực hiện bằng cách trực tiếp đi theo các đường dẫn (PATH) đã được định nghĩa (Alphabet -> Google -> DeepMind -> Gemini), giúp việc suy luận đa bước trở nên rõ ràng và chính xác hơn nhiều.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.7548370361328125,
+            "context_len": 9563
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp:\n\nDeepMind là một phòng thí nghiệm nghiên cứu AI, là công ty con của Alphabet Inc. DeepMind được Google mua lại vào năm 2014 và sáp nhập với bộ phận Google Brain của Google AI để trở thành Google DeepMind vào tháng 4 năm 2023. Google DeepMind chịu trách nhiệm phát triển Gemini (dòng mô hình ngôn ngữ lớn của Google).\n\nVì vậy, chuỗi AI của Alphabet có thể được hiểu là: Alphabet Inc. -> DeepMind (thông qua việc sáp nhập với Google) -> Gemini.\n\nVề việc giải thích tại sao GraphRAG lại tốt hơn Flat RAG, thông tin này không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.5,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.552985191345215,
+            "context_len": 2345
+        },
+        "hybrid_rag": {
+            "answer": "Alphabet Inc. is the parent company of Google. Google acquired DeepMind in 2014. DeepMind, now operating as Google DeepMind, is responsible for the development of Gemini, Google's family of large language models.\n\nThe chain is as follows:\n1.  **Alphabet Inc. acquired Google.** (Graph: `Alphabet Inc --<class 'abc.ACQUIRED'>--> Google`; Source Evidence: \"DeepMind Technologies Limited... serves as a subsidiary of Alphabet Inc.\" and \"Google's parent company Alphabet Inc.\")\n2.  **Google acquired DeepMind.** (Graph: `Google --<class 'abc.ACQUIRED'>--> DeepMind`; Source Evidence: \"it [DeepMind] was acquired by Google in 2014\")\n3.  **DeepMind developed Gemini.** (Graph: `DeepMind --<class 'abc.DEVELOPED'>--> Gemini`; Vector Evidence: \"Google DeepMind has become responsible for the development of Gemini (Google's family of large language models)\")\n\n**Why GraphRAG retrieves this better than Flat RAG:**\n\nThis question requires understanding a multi-hop, relational chain of events and ownership.\n\n*   **Flat RAG** would rely on keyword matching and semantic similarity across potentially disparate text chunks. It might retrieve documents mentioning \"Alphabet,\" \"Google,\" \"DeepMind,\" and \"Gemini\" individually, but it would struggle to explicitly and accurately connect the precise relationships (e.g., \"acquired by,\" \"developed by,\" \"parent company\") in a structured, verifiable sequence without explicit sentences stating the entire chain in a single retrieved passage. It would require the LLM to infer these connections from potentially fragmented information.\n\n*   **GraphRAG** excels here because:\n    1.  **Explicit Relationships:** The knowledge graph directly stores the `ACQUIRED` and `DEVELOPED` relationships between entities. It can explicitly trace the path from Alphabet to Google, then to DeepMind, and finally to Gemini.\n    2.  **Multi-hop Reasoning:** The graph allows for direct traversal of these multi-hop paths, providing a structured and accurate sequence of connections.\n    3.  **Verification:** While the graph provides the structural path, the vector evidence can be used to confirm details like the acquisition year or the nature of Gemini (e.g., \"Google's family of large language models\"), ensuring factual accuracy. This combination provides both the precise relational structure and rich descriptive detail.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 10.632711172103882,
+            "context_len": 11971
+        }
+    },
+    {
+        "id": 24,
+        "category": "complex-reasoning",
+        "question": "Which two founders of Google became associated with Alphabet after the restructuring, and what role did Sundar Pichai take across Google and Alphabet?",
+        "ground_truth": "Larry Page and Sergey Brin founded Google and remained employees, board members, and controlling shareholders of Alphabet after stepping down from executive posts. Sundar Pichai became CEO of Google in 2015 and also became CEO of Alphabet in 2019.",
+        "graph_rag": {
+            "answer": "Hai nhà sáng lập Google là Larry Page và Sergey Brin đã đồng sáng lập Alphabet Inc. Larry Page trở thành CEO của Alphabet, và Sergey Brin cũng giữ một vị trí điều hành. Sundar Pichai đảm nhiệm vai trò CEO của cả Google và Alphabet Inc.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 10.930279970169067,
+            "context_len": 7954
+        },
+        "flat_rag": {
+            "answer": "Sau khi tái cơ cấu, Larry Page trở thành CEO của Alphabet. Ngữ cảnh không cung cấp thông tin về vai trò của Sergey Brin với Alphabet sau tái cơ cấu.\n\nSundar Pichai được bổ nhiệm làm CEO của Google vào năm 2015. Đến năm 2019, ông cũng trở thành CEO của Alphabet.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.944710969924927,
+            "context_len": 2792
+        },
+        "hybrid_rag": {
+            "answer": "Larry Page and Sergey Brin, the co-founders of Google, became associated with Alphabet Inc. after the restructuring in 2015. Larry Page became the CEO of Alphabet, and Sergey Brin also took on an executive role, running Alphabet alongside Page. They both resigned from their executive posts in December 2019.\n\nSundar Pichai was appointed CEO of Google in 2015, replacing Larry Page. In 2019, he also became the CEO of Alphabet Inc., thus holding the CEO position for both Google and its parent company, Alphabet.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 9.707862138748169,
+            "context_len": 10787
+        }
+    },
+    {
+        "id": 25,
+        "category": "complex-reasoning",
+        "question": "Compare Databricks' AI partnerships with Anthropic, Alphabet, and OpenAI by partner and purpose.",
+        "ground_truth": "Databricks entered a five-year partnership with Anthropic to incorporate Anthropic AI products into its platform, a four-year partnership with Alphabet to incorporate Gemini into Databricks, and a $100 million partnership with OpenAI to incorporate OpenAI's LLMs into the Databricks platform.",
+        "graph_rag": {
+            "answer": "Databricks đã hợp tác với Anthropic để tích hợp các sản phẩm AI của Anthropic vào nền tảng của mình.\nDatabricks cũng hợp tác với Alphabet để tích hợp Gemini vào nền tảng Databricks.\nNgoài ra, Databricks còn hợp tác với OpenAI để tích hợp các mô hình ngôn ngữ lớn (LLMs) của OpenAI vào nền tảng Databricks.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 52.86601901054382,
+            "context_len": 8318
+        },
+        "flat_rag": {
+            "answer": "Dưới đây là so sánh các mối quan hệ đối tác AI của Databricks với Anthropic, Alphabet và OpenAI:\n\n*   **Anthropic:**\n    *   **Đối tác:** Anthropic\n    *   **Mục đích:** Tích hợp các sản phẩm AI của Anthropic vào nền tảng của Databricks.\n    *   **Giá trị thỏa thuận:** 100 triệu USD\n    *   **Thời hạn:** Hợp tác 5 năm\n\n*   **Alphabet:**\n    *   **Đối tác:** Alphabet\n    *   **Mục đích:** Tích hợp Gemini vào nền tảng của Databricks.\n    *   **Thời hạn:** Hợp tác 4 năm\n\n*   **OpenAI:**\n    *   **Đối tác:** OpenAI\n    *   **Mục đích:** Tích hợp các mô hình ngôn ngữ lớn (LLM) của OpenAI vào nền tảng của Databricks.\n    *   **Giá trị thỏa thuận:** 100 triệu USD",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.782125949859619,
+            "context_len": 2757
+        },
+        "hybrid_rag": {
+            "answer": "Databricks has established partnerships with Anthropic, Alphabet, and OpenAI, each with a specific purpose:\n\n*   **Anthropic:** In March 2025, Databricks entered a five-year partnership with Anthropic, valued at $100 million, to incorporate Anthropic's AI products into its platform.\n*   **Alphabet:** In June 2025, Databricks formed a four-year partnership with Alphabet to integrate Gemini into the Databricks platform.\n*   **OpenAI:** In September 2025, Databricks partnered with OpenAI in a deal valued at $100 million to incorporate OpenAI's Large Language Models (LLMs) into the Databricks platform.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.980155944824219,
+            "context_len": 11126
+        }
+    },
+    {
+        "id": 26,
+        "category": "complex-reasoning",
+        "question": "Compare Amazon's strategic relationships with Anthropic and OpenAI based on the corpus.",
+        "ground_truth": "Amazon has a deep strategic partnership with Anthropic, became a minority stakeholder, invested up to $4 billion, and Anthropic uses AWS as its primary cloud provider. Amazon also entered talks with OpenAI in January 2026 to invest up to $50 billion, but that is described as talks rather than an established partnership in the corpus.",
+        "graph_rag": {
+            "answer": "Amazon có mối quan hệ đối tác chiến lược sâu sắc với Anthropic, được công bố vào tháng 9 năm 2023, và Anthropic cũng hợp tác với Amazon Web Services (AWS). Đối với OpenAI, Amazon Web Services (AWS) đã đầu tư vào OpenAI, và Amazon đã đàm phán để đầu tư tới 50 tỷ đô la vào OpenAI vào tháng 1 năm 2026.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.48763108253479,
+            "context_len": 8506
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp, có thông tin về mối quan hệ chiến lược của Amazon với Anthropic. Amazon đã trở thành cổ đông thiểu số của Anthropic, ban đầu đầu tư 1,25 tỷ USD và sau đó tăng tổng đầu tư lên 4 tỷ USD vào tháng 3 năm 2024, và tiếp tục đầu tư thêm 4 tỷ USD vào tháng 11 năm 2024, nâng tổng số tiền đầu tư lên gấp đôi. Là một phần của thỏa thuận, Anthropic sử dụng Amazon Web Services (AWS) làm nhà cung cấp dịch vụ đám mây chính và cung cấp các mô hình AI của mình cho khách hàng của AWS.\n\nTuy nhiên, ngữ cảnh không cung cấp bất kỳ thông tin nào về mối quan hệ chiến lược của Amazon với OpenAI.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.9839890003204346,
+            "context_len": 2905
+        },
+        "hybrid_rag": {
+            "answer": "Amazon has distinct strategic relationships with Anthropic and OpenAI, with a significantly deeper and more established partnership with Anthropic.\n\n**Amazon's Relationship with Anthropic:**\n*   **Deep Strategic Partnership:** Amazon has a \"deep strategic partnership\" with Anthropic, which is explicitly identified as \"OpenAI's competitor.\" This partnership was announced in September 2023.\n*   **Significant Investment:** Amazon is a minority stakeholder in Anthropic.\n    *   Initially invested $1.25 billion.\n    *   Planned a total investment of $4 billion, which was completed by March 2024.\n    *   Invested an additional $4 billion in November 2024, doubling its total investment to $8 billion.\n*   **Operational Integration:** As part of the deal, Anthropic uses Amazon Web Services (AWS) as its primary cloud provider and makes its AI models available to AWS customers.\n*   **Government Contracts:** In November 2024, Anthropic partnered with Palantir and Amazon Web Services to provide the Claude model to U.S. military and intelligence.\n\n**Amazon's Relationship with OpenAI:**\n*   **Indirect Investment:** Amazon Web Services (AWS), an Amazon subsidiary, has invested in OpenAI.\n*   **Potential Future Investment:** In January 2026, Amazon entered talks with OpenAI to invest up to $50 billion. This indicates a potential future strategic relationship, but it is described as \"talks\" rather than a finalized deal or an existing deep partnership.\n*   **Shared Technology:** Both Amazon and OpenAI utilize artificial intelligence (AI) technology.\n\n**Comparison:**\nAmazon's relationship with Anthropic is characterized by a substantial, completed investment ($8 billion), a clear operational integration (Anthropic using AWS as its primary cloud provider and offering models to AWS customers), and a direct strategic partnership against a competitor. In contrast, Amazon's relationship with OpenAI, while involving an AWS investment, is primarily defined by ongoing discussions for a much larger potential future investment, without the same level of current operational integration or explicit \"deep strategic partnership\" designation found with Anthropic.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 11.953520059585571,
+            "context_len": 11462
+        }
+    },
+    {
+        "id": 27,
+        "category": "complex-reasoning",
+        "question": "How do Nvidia and Google differ in their AI hardware roles according to the corpus?",
+        "ground_truth": "Nvidia controls more than 80% of the market for GPUs used in training and deploying AI models and provides chips for over 75% of the TOP500 supercomputers. Google is associated with TPUs and Google Quantum AI, and Anthropic's Google cloud partnership gives it access to up to one million Google TPUs.",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin được cung cấp:\n*   Nvidia đã phát triển GPU (phần cứng).\n*   Google có liên quan đến điện toán lượng tử (Google Quantum AI) nhưng không có thông tin cụ thể về việc Google phát triển phần cứng AI.",
+            "metrics": {
+                "correctness": 0.4,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 6.679167032241821,
+            "context_len": 8596
+        },
+        "flat_rag": {
+            "answer": "Theo ngữ cảnh được cung cấp, không có thông tin nào về vai trò của Google trong phần cứng AI. Do đó, tôi không thể so sánh sự khác biệt giữa Nvidia và Google về vai trò phần cứng AI.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.4157891273498535,
+            "context_len": 3637
+        },
+        "hybrid_rag": {
+            "answer": "Nvidia's primary role in AI hardware is the development and provision of Graphics Processing Units (GPUs), which are widely used for data science, high-performance computing, and specifically for training and deploying AI models. They also developed the CUDA software platform to enable GPUs for compute-intensive applications, and control a significant market share for GPUs used in AI.\n\nGoogle, on the other hand, develops specialized AI systems such as Google Quantum AI, focusing on quantum computing. While Google uses artificial intelligence, the corpus indicates their hardware role is more about developing specific AI ventures like quantum computing rather than being a general provider of AI-enabling hardware like Nvidia's GPUs.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 8.459561824798584,
+            "context_len": 12284
+        }
+    },
+    {
+        "id": 28,
+        "category": "complex-reasoning",
+        "question": "Using the corpus, explain how OpenAI, Anthropic, Mistral AI, and Databricks show different AI company archetypes.",
+        "ground_truth": "OpenAI is an AI research organization with GPT, DALL-E, Sora, and ChatGPT and deep Microsoft/Azure backing. Anthropic is an AI safety-focused company founded by former OpenAI employees with Claude and major Amazon/Google/Microsoft partnerships. Mistral AI is a French AI company known for open-weight and proprietary models, including Le Chat and Mistral model families. Databricks is a cloud data and AI platform company built from Apache Spark creators, lakehouse architecture, and partnerships with Anthropic, Alphabet/Gemini, and OpenAI.",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin được cung cấp:\n\n1.  **OpenAI:** Là nhà phát triển mô hình AI nền tảng hàng đầu (ví dụ: GPT), tập trung vào nghiên cứu và phát triển các công nghệ AI cốt lõi, được đồng sáng lập bởi các nhân vật nổi bật như Sam Altman và Elon Musk.\n2.  **Anthropic:** Là một nhà phát triển mô hình AI khác, được thành lập bởi các cựu thành viên cấp cao của OpenAI, được coi là đối thủ cạnh tranh, với các mối quan hệ đối tác chiến lược sâu rộng (ví dụ: Amazon, Databricks, Google) và phát triển các sản phẩm AI riêng.\n3.  **Mistral AI:** Là một nhà phát triển LLM mới nổi, nhận được đầu tư từ các công ty lớn (ví dụ: Microsoft) và tập trung vào việc tạo ra các mô hình ngôn ngữ lớn của riêng mình (ví dụ: Mistral Medium 3).\n4.  **Databricks:** Là một nhà cung cấp nền tảng và công cụ cho phát triển AI, tích hợp và sử dụng công nghệ từ nhiều nhà phát triển mô hình AI khác nhau (như OpenAI, Anthropic, Mistral AI, Google), đồng thời tự phát triển công cụ (ví dụ: Dolly, Agent Bricks) và mở rộng thông qua mua lại/đầu tư vào các công ty AI khác.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 0.9,
+                "no_hallucination": 1.0
+            },
+            "time": 17.73525309562683,
+            "context_len": 8303
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp:\n\n*   **Mistral AI:** Là một công ty AI của Pháp, thành lập năm 2023 bởi các nhà nghiên cứu AI từng làm việc tại Google DeepMind và Meta Platforms. Họ tập trung vào các mô hình ngôn ngữ lớn (LLMs) có trọng số mở (open-weight), bao gồm cả mô hình AI mã nguồn mở và độc quyền. Điều này cho thấy Mistral AI là một công ty khởi nghiệp AI thế hệ mới, tập trung vào phát triển các mô hình nền tảng (foundation models) và có nguồn gốc từ các nhà nghiên cứu hàng đầu.\n\n*   **Databricks:** Là một công ty phần mềm của Mỹ, thành lập năm 2013 bởi những người tạo ra Apache Spark. Họ cung cấp nền tảng dựa trên đám mây cho phân tích dữ liệu và trí tuệ nhân tạo. Databricks đã phát triển kiến trúc 'data lakehouse' và dự án mã nguồn mở Delta Lake. Điều này cho thấy Databricks là một công ty AI/dữ liệu có kinh nghiệm hơn, tập trung vào việc cung cấp nền tảng và công cụ để quản lý và phân tích dữ liệu lớn, tích hợp AI vào các giải pháp doanh nghiệp.\n\nThông tin về OpenAI và Anthropic không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.1,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.656068801879883,
+            "context_len": 3117
+        },
+        "hybrid_rag": {
+            "answer": "These four companies represent distinct archetypes within the AI industry:\n\n1.  **OpenAI: The Generative AI Pioneer & Talent Incubator**\n    *   **Archetype:** OpenAI emerged as a pioneer in generative AI, co-founded by prominent figures like Sam Altman and Elon Musk (Graph FACT). It developed foundational models like GPT (Graph FACT). Initially structured with a non-profit mission, it evolved into a complex capped for-profit entity (SOURCE_EVIDENCE).\n    *   **Evidence:** OpenAI's role as a talent incubator is evident as former employees, including Dario and Daniela Amodei, went on to co-found Anthropic (Graph PATH, Graph FACT, SOURCE_EVIDENCE). It also forms strategic partnerships, such as with Databricks (Graph PATH, Graph FACT).\n\n2.  **Anthropic: The Spin-off Challenger & Ethical AI Competitor**\n    *   **Archetype:** Anthropic represents the \"spin-off\" archetype, founded by former senior members of a leading competitor (OpenAI), often driven by a desire for a different approach or focus (e.g., AI safety, though not explicitly detailed in the provided text). It directly competes with established players.\n    *   **Evidence:** Dario and Daniela Amodei, both former OpenAI employees, co-founded Anthropic (Graph PATH, Graph FACT, SOURCE_EVIDENCE). Anthropic continued to hire notable employees from OpenAI (SOURCE_EVIDENCE), solidifying its identity as a direct competitor, as noted by Amazon's strategic partnership with Anthropic, \"OpenAI's competitor\" (SOURCE_EVIDENCE). It also partners with Databricks and Google (Graph PATH).\n\n3.  **Mistral AI: The European Open-Source Hybrid Challenger**\n    *   **Archetype:** Mistral AI embodies the \"European challenger\" archetype, a rapidly growing startup founded by experienced researchers from major tech companies (Google DeepMind, Meta Platforms) (VECTOR_EVIDENCE). It distinguishes itself with a hybrid approach to model distribution, offering both open-weight/open-source and proprietary LLMs (VECTOR_EVIDENCE).\n    *   **Evidence:** Founded in 2023 by three French AI researchers (VECTOR_EVIDENCE), Mistral AI quickly achieved a valuation of over US$14 billion by 2025 (VECTOR_EVIDENCE). It has attracted significant investment from major players like Microsoft and influential figures like Eric Schmidt (Graph PATH, Graph FACT). It develops LLMs and partners with Databricks (Graph PATH).\n\n4.  **Databricks: The AI/Data Platform & Infrastructure Provider**\n    *   **Archetype:** Databricks functions as an \"AI/data platform and infrastructure provider,\" originating from the creators of foundational open-source projects (Apache Spark) (VECTOR_EVIDENCE). It offers cloud-based solutions for data analytics and AI, and grows through strategic acquisitions and extensive partnerships.\n    *   **Evidence:** Founded in 2013 by the original creators of Apache Spark (VECTOR_EVIDENCE), Databricks provides a cloud-based platform for data analytics and AI (VECTOR_EVIDENCE). It developed the 'data lakehouse' architecture and open-source projects like Delta Lake (VECTOR_EVIDENCE, Graph FACT). Databricks partners with multiple AI leaders, including OpenAI and Anthropic (Graph PATH, Graph FACT), and has a history of acquiring companies like MosaicML (Graph FACT), indicating a platform-centric growth strategy.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.9
+            },
+            "time": 16.356664657592773,
+            "context_len": 11471
+        }
+    },
+    {
+        "id": 29,
+        "category": "complex-reasoning",
+        "question": "What chain connects Elon Musk to OpenAI and Tesla, and why can this question test hallucination risk?",
+        "ground_truth": "Elon Musk co-founded and invested in OpenAI, and he led Tesla's first funding round, became Tesla chairman, later became CEO, and is allowed by settlement to call himself a Tesla co-founder. This tests hallucination risk because the system must distinguish OpenAI founding from Tesla founding/incorporation details instead of claiming Musk originally incorporated Tesla.",
+        "graph_rag": {
+            "answer": "Chuỗi kết nối là: Elon Musk đồng sáng lập OpenAI VÀ Elon Musk là CEO của Tesla, Inc (Elon Musk cũng đồng sáng lập Tesla, Inc).\n\nCâu hỏi này có thể kiểm tra nguy cơ ảo giác vì nó yêu cầu một chuỗi kết nối ba thực thể. Nếu không tuân thủ nghiêm ngặt các thông tin được cung cấp, mô hình có thể tạo ra một mối quan hệ trực tiếp giữa OpenAI và Tesla mà không có trong GRAPH FACT, PATH hoặc SOURCE_EVIDENCE. Các thông tin chỉ cho thấy Elon Musk có mối quan hệ riêng biệt với cả hai công ty.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 7.271155834197998,
+            "context_len": 8470
+        },
+        "flat_rag": {
+            "answer": "Elon Musk co-founded OpenAI vào năm 2015. Ông cũng tham gia Tesla với tư cách là nhà đầu tư ban đầu vào năm 2004 và trở thành CEO kiêm kiến trúc sư sản phẩm vào năm 2008.\n\nNgữ cảnh không cung cấp thông tin về lý do tại sao câu hỏi này có thể kiểm tra rủi ro ảo giác.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.797005891799927,
+            "context_len": 3568
+        },
+        "hybrid_rag": {
+            "answer": "The chain connecting Elon Musk to OpenAI and Tesla is as follows:\n\n*   **Elon Musk co-founded OpenAI.** (GRAPH PATH: `Elon Musk --<class 'abc.CO_FOUNDED'>--> OpenAI`; SOURCE_EVIDENCE: \"In December 2015, OpenAI was founded as the nonprofit organization OpenAI, Inc., by Elon Musk...\"; VECTOR EVIDENCE: \"In 2015, he co-founded OpenAI to advance artificial intelligence (AI) research...\")\n*   **Elon Musk is the CEO of Tesla, Inc.** (GRAPH PATH: `Elon Musk --<class 'abc.CEO_OF'>--> Tesla, Inc`; SOURCE_EVIDENCE: \"Elon Reeve Musk... is a businessman and entrepreneur known for his leadership of Tesla...\"; VECTOR EVIDENCE: \"Musk joined the automaker Tesla as an early investor in 2004 and became its CEO and product architect in 2008...\")\n\nThis question can test hallucination risk because while Elon Musk co-founded OpenAI, he later left the organization due to growing discontent with its direction and leadership, and subsequently established a competing AI company, xAI. A model might accurately retrieve the fact that he co-founded OpenAI but could hallucinate or omit the critical, time-sensitive information that he is no longer involved with OpenAI and is now a competitor. This omission would present an incomplete and potentially misleading picture of his current relationship with the company.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 10.453661918640137,
+            "context_len": 12089
+        }
+    },
+    {
+        "id": 30,
+        "category": "complex-reasoning",
+        "question": "Across OpenAI, Alphabet, Anthropic, Amazon, and Databricks, which relationships are ownership/control relationships versus product or platform partnerships?",
+        "ground_truth": "Ownership/control relationships include Alphabet being Google's parent company and OpenAI's nonprofit/Foundation controlling or holding stake in OpenAI Group PBC after restructuring. Product or platform partnerships include Microsoft providing Azure to OpenAI, Amazon/AWS partnering with Anthropic, Google providing TPU access to Anthropic, and Databricks incorporating Anthropic products, Alphabet's Gemini, and OpenAI LLMs into its platform.",
+        "graph_rag": {
+            "answer": "Dưới đây là các mối quan hệ giữa OpenAI, Alphabet, Anthropic, Amazon và Databricks, được phân loại thành mối quan hệ sở hữu/kiểm soát, đối tác sản phẩm/nền tảng và đầu tư:\n\n**Mối quan hệ sở hữu/kiểm soát:**\n*   Alphabet Inc sở hữu Google.\n*   Amazon sở hữu Amazon Web Services (AWS).\n\n**Mối quan hệ đối tác sản phẩm hoặc nền tảng:**\n*   OpenAI và Databricks hợp tác để tích hợp các mô hình ngôn ngữ lớn (LLM) của OpenAI vào nền tảng Databricks.\n*   Databricks và Alphabet Inc hợp tác để tích hợp Gemini vào nền tảng Databricks.\n*   Databricks và Anthropic hợp tác để tích hợp các sản phẩm AI của Anthropic vào nền tảng Databricks.\n*   Amazon có mối quan hệ đối tác chiến lược sâu sắc với Anthropic.\n\n**Mối quan hệ đầu tư:**\n*   Amazon Web Services (AWS) đầu tư vào OpenAI.",
+            "metrics": {
+                "correctness": 0.5,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 14.548733949661255,
+            "context_len": 9388
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp:\n\n**Mối quan hệ sở hữu/kiểm soát:**\n\n*   **Anthropic và FTX:** FTX đã đầu tư 500 triệu USD vào Anthropic.\n*   **Anthropic và Amazon:** Amazon trở thành cổ đông thiểu số của Anthropic thông qua các khoản đầu tư tổng cộng 8 tỷ USD (1.25 tỷ USD ban đầu, 2.75 tỷ USD vào tháng 3/2024, và 4 tỷ USD vào tháng 11/2024).\n*   **Anthropic và Google:** Google đã đầu tư 500 triệu USD và cam kết thêm 2.5 tỷ USD (1.5 tỷ USD theo thời gian và 1 tỷ USD vào tháng 3/2025) vào Anthropic.\n\n**Mối quan hệ đối tác sản phẩm hoặc nền tảng:**\n\n*   **Anthropic và Amazon:** Anthropic sử dụng Amazon Web Services (AWS) làm nhà cung cấp dịch vụ đám mây chính và cung cấp các mô hình AI của mình cho khách hàng của AWS.\n\n**Các mối quan hệ khác:**\n\n*   Ngữ cảnh không cung cấp thông tin về mối quan hệ sở hữu/kiểm soát hoặc đối tác sản phẩm/nền tảng giữa Anthropic và OpenAI (chỉ đề cập đến việc các cá nhân rời OpenAI để thành lập Anthropic).\n*   Ngữ cảnh không cung cấp thông tin về bất kỳ mối quan hệ nào liên quan đến Databricks.\n*   Ngữ cảnh không cung cấp thông tin về mối quan hệ giữa OpenAI, Alphabet (chỉ Google được đề cập), Amazon và Databricks với nhau, ngoài những gì đã nêu ở trên.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 9.043689250946045,
+            "context_len": 3370
+        },
+        "hybrid_rag": {
+            "answer": "Here's a breakdown of the relationships between OpenAI, Alphabet, Anthropic, Amazon, and Databricks, categorized by ownership/control versus product/platform partnerships:\n\n**Ownership/Control Relationships:**\n\n*   **Amazon & OpenAI:** Amazon, through its subsidiary Amazon Web Services (AWS), has invested in OpenAI.\n    *   *Evidence:* GRAPH: `Amazon --ACQUIRED--> Amazon Web Services (AWS) --INVESTED_IN--> OpenAI`\n*   **Alphabet Inc & Anthropic:** Alphabet Inc (via Google) has made significant investments in Anthropic.\n    *   *Evidence:* VECTOR: \"In October 2023, Google invested $500 million in Anthropic and committed to an additional $1.5 billion over time. In March 2025, Google agreed to invest another $1 billion in Anthropic.\"\n*   **Amazon & Anthropic:** Amazon has made significant investments in Anthropic, becoming a minority stakeholder.\n    *   *Evidence:* VECTOR: \"In September 2023, Amazon announced a partnership with Anthropic. Amazon became a minority stakeholder by initially investing $1.25 billion and planning a total investment of $4 billion. The remaining $2.75 billion was invested in March 2024. In November 2024, Amazon invested another $4 billion, doubling its total investment.\"\n*   **OpenAI & Anthropic (Historical/Founder):** Dario Amodei, formerly employed by OpenAI, founded Anthropic. This represents a foundational link rather than direct company ownership or control.\n    *   *Evidence:* GRAPH: `OpenAI --EMPLOYED_BY--> Dario Amodei --FOUNDED_BY--> Anthropic`\n    *   *Evidence:* VECTOR: \"The Amodei siblings were among those who left OpenAI due to directional differences.\"\n\n**Product/Platform Partnerships:**\n\n*   **OpenAI & Databricks:** Databricks partners with OpenAI to incorporate OpenAI's Large Language Models (LLMs) into its platform.\n    *   *Evidence:* GRAPH: `Databricks --PARTNER_WITH--> OpenAI`\n    *   *Evidence:* SOURCE_EVIDENCE: \"In September 2025, Databricks entered into a partnership with OpenAI to incorporate the company's LLMs into the Databricks platform in a deal valued at $100 million.\"\n*   **Alphabet Inc & Databricks:** Databricks partners with Alphabet to incorporate Gemini into the Databricks platform.\n    *   *Evidence:* GRAPH: `Databricks --PARTNER_WITH--> Alphabet Inc`\n    *   *Evidence:* SOURCE_EVIDENCE: \"In June 2025, Databricks entered into a four-year partnership with Alphabet to incorporate Gemini into the Databricks platform.\"\n*   **Anthropic & Databricks:** Databricks partners with Anthropic to incorporate Anthropic's AI products into its platform.\n    *   *Evidence:* GRAPH: `Databricks --PARTNER_WITH--> Anthropic`\n    *   *Evidence:* SOURCE_EVIDENCE: \"In March 2025, Databricks entered a five-year partnership with Anthropic, incorporating Anthropic's AI products into its platform in a deal valued at $100 million.\"\n*   **Amazon & Anthropic:** Anthropic uses Amazon Web Services (AWS) as its primary cloud provider and makes its AI models available to AWS customers. (This is a product/platform aspect of their broader relationship which also includes investment).\n    *   *Evidence:* VECTOR: \"As part of the deal, Anthropic uses Amazon Web Services (AWS) as its primary cloud provider and makes its AI models available to AWS customers.\"",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 21.610480785369873,
+            "context_len": 12809
         }
     }
 ]

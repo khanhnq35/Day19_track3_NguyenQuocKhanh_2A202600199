@@ -8,6 +8,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from src.config import Config
 from src.graph_query import GraphQueryEngine
 from src.flat_rag import FlatRAG
+from src.hybrid_rag import HybridRAG
 from langchain_google_vertexai import ChatVertexAI
 from langchain_core.messages import HumanMessage
 
@@ -17,6 +18,7 @@ class Evaluator:
         # Lưu ý: Thread-safe? Neo4j driver và Langchain LLM thường thread-safe.
         self.graph_engine = GraphQueryEngine()
         self.flat_engine = FlatRAG()
+        self.hybrid_engine = HybridRAG()
         self.judge_llm = ChatVertexAI(
             model_name=Config.GCP_MODEL_NAME,
             project=Config.GCP_PROJECT_ID,
@@ -59,10 +61,18 @@ class Evaluator:
         f_time = time.time() - start_t
         f_metrics = self.evaluate_all_metrics(q['question'], q['ground_truth'], f_res["answer"], f_res["context"])
 
+        # Hybrid RAG
+        start_t = time.time()
+        h_res = self.hybrid_engine.query(q['question'])
+        h_time = time.time() - start_t
+        h_context = h_res.get("merged_context", "")
+        h_metrics = self.evaluate_all_metrics(q['question'], q['ground_truth'], h_res["answer"], h_context)
+
         return {
             "id": q["id"], "category": q["category"], "question": q["question"], "ground_truth": q["ground_truth"],
             "graph_rag": {"answer": g_res["answer"], "metrics": g_metrics, "time": g_time, "context_len": len(g_res["context"])},
-            "flat_rag": {"answer": f_res["answer"], "metrics": f_metrics, "time": f_time, "context_len": len(f_res["context"])}
+            "flat_rag": {"answer": f_res["answer"], "metrics": f_metrics, "time": f_time, "context_len": len(f_res["context"])},
+            "hybrid_rag": {"answer": h_res["answer"], "metrics": h_metrics, "time": h_time, "context_len": len(h_context)},
         }
 
     def run_benchmark(self, questions_path: str):
@@ -94,42 +104,127 @@ class Evaluator:
         self.generate_reports(evaluation_data)
 
     def generate_reports(self, data: List[Dict]):
+        def _escape_md(value: object) -> str:
+            """Escape Markdown table-breaking characters."""
+            return str(value).replace("|", "\\|").replace("\n", " ")
+
+        def _metric_str(metrics: Dict[str, float]) -> str:
+            """Format correctness/faithfulness/no-hallucination scores."""
+            return (
+                f"{metrics['correctness']:.2f}/"
+                f"{metrics['faithfulness']:.2f}/"
+                f"{metrics['no_hallucination']:.2f}"
+            )
+
+        def _accuracy(rows: List[Dict], rag_key: str) -> float:
+            """Calculate average correctness for one RAG pipeline."""
+            return float(np.mean([r[rag_key]["metrics"]["correctness"] for r in rows]))
+
+        def _best_pipeline(scores: Dict[str, float]) -> str:
+            """Return best pipeline name or Draw for tied correctness."""
+            best_score = max(scores.values())
+            winners = [name for name, score in scores.items() if score == best_score]
+            return "Draw" if len(winners) > 1 else winners[0]
+
         # Report 1: comparison_table.md
-        table_md = "# Evaluation Comparison Table\n\n| ID | Category | Question | Flat RAG (C/F/H) | GraphRAG (C/F/H) | Win |\n|---|---|---|---|---|---|\n"
-        stats = {cat: {"graph": [], "flat": []} for cat in ["single-hop", "multi-hop", "complex-reasoning"]}
+        category_order = ["single-hop", "multi-hop", "complex-reasoning"]
+        category_titles = {
+            "single-hop": "Single-hop Questions",
+            "multi-hop": "Multi-hop Questions",
+            "complex-reasoning": "Complex Reasoning Questions",
+        }
+        grouped_data = {cat: [] for cat in category_order}
+        for row in data:
+            grouped_data.setdefault(row["category"], []).append(row)
 
-        for r in data:
-            f_m, g_m = r["flat_rag"]["metrics"], r["graph_rag"]["metrics"]
-            f_str = f"{f_m['correctness']}/{f_m['faithfulness']}/{f_m['no_hallucination']}"
-            g_str = f"{g_m['correctness']}/{g_m['faithfulness']}/{g_m['no_hallucination']}"
-            winner = "Graph" if g_m["correctness"] > f_m["correctness"] else ("Flat" if f_m["correctness"] > g_m["correctness"] else "Draw")
-            table_md += f"| {r['id']} | {r['category']} | {r['question']} | {f_str} | {g_str} | {winner} |\n"
-            stats[r["category"]]["graph"].append(g_m["correctness"])
-            stats[r["category"]]["flat"].append(f_m["correctness"])
+        table_lines = [
+            "# Evaluation Comparison Table",
+            "",
+            "> Metric format: `Correctness / Faithfulness / No-Hallucination`.",
+            "",
+            "## Overall Summary",
+            "",
+            "| Category | # Questions | Flat RAG Acc | GraphRAG Acc | HybridRAG Acc | Best System |",
+            "|---|---:|---:|---:|---:|---|",
+        ]
 
-        table_md += "\n## Summary Statistics (Accuracy)\n\n| Category | Flat RAG Avg | GraphRAG Avg | Delta (G-F) |\n|---|---|---|---|\n"
-        for cat, scores in stats.items():
-            avg_f, avg_g = np.mean(scores["flat"]), np.mean(scores["graph"])
-            table_md += f"| {cat} | {avg_f:.2f} | {avg_g:.2f} | {avg_g - avg_f:+.2f} |\n"
-        
-        with open("results/comparison_table.md", "w", encoding="utf-8") as f: f.write(table_md)
+        for category in category_order:
+            rows = grouped_data.get(category, [])
+            if not rows:
+                continue
+            flat_acc = _accuracy(rows, "flat_rag")
+            graph_acc = _accuracy(rows, "graph_rag")
+            hybrid_acc = _accuracy(rows, "hybrid_rag")
+            best_system = _best_pipeline(
+                {"Flat": flat_acc, "Graph": graph_acc, "Hybrid": hybrid_acc}
+            )
+            table_lines.append(
+                f"| {category} | {len(rows)} | {flat_acc:.2f} | {graph_acc:.2f} | "
+                f"{hybrid_acc:.2f} | {best_system} |"
+            )
+
+        all_flat = _accuracy(data, "flat_rag")
+        all_graph = _accuracy(data, "graph_rag")
+        all_hybrid = _accuracy(data, "hybrid_rag")
+        overall_best = _best_pipeline(
+            {"Flat": all_flat, "Graph": all_graph, "Hybrid": all_hybrid}
+        )
+        table_lines.append(
+            f"| **Overall** | **{len(data)}** | **{all_flat:.2f}** | "
+            f"**{all_graph:.2f}** | **{all_hybrid:.2f}** | **{overall_best}** |"
+        )
+
+        for category in category_order:
+            rows = grouped_data.get(category, [])
+            if not rows:
+                continue
+            table_lines.extend(
+                [
+                    "",
+                    f"## {category_titles[category]}",
+                    "",
+                    "| ID | Question | Flat RAG | GraphRAG | HybridRAG | Best |",
+                    "|---:|---|---:|---:|---:|---|",
+                ]
+            )
+            for row in rows:
+                scores = {
+                    "Flat": row["flat_rag"]["metrics"]["correctness"],
+                    "Graph": row["graph_rag"]["metrics"]["correctness"],
+                    "Hybrid": row["hybrid_rag"]["metrics"]["correctness"],
+                }
+                table_lines.append(
+                    f"| {row['id']} | {_escape_md(row['question'])} | "
+                    f"{_metric_str(row['flat_rag']['metrics'])} | "
+                    f"{_metric_str(row['graph_rag']['metrics'])} | "
+                    f"{_metric_str(row['hybrid_rag']['metrics'])} | "
+                    f"{_best_pipeline(scores)} |"
+                )
+
+        with open("results/comparison_table.md", "w", encoding="utf-8") as f:
+            f.write("\n".join(table_lines) + "\n")
 
         # Report 2: cost_analysis.md
-        f_times, g_times = [r["flat_rag"]["time"] for r in data], [r["graph_rag"]["time"] for r in data]
-        f_ctx, g_ctx = [r["flat_rag"]["context_len"] for r in data], [r["graph_rag"]["context_len"] for r in data]
+        f_times = [r["flat_rag"]["time"] for r in data]
+        g_times = [r["graph_rag"]["time"] for r in data]
+        h_times = [r["hybrid_rag"]["time"] for r in data]
+        f_ctx = [r["flat_rag"]["context_len"] for r in data]
+        g_ctx = [r["graph_rag"]["context_len"] for r in data]
+        h_ctx = [r["hybrid_rag"]["context_len"] for r in data]
         f_c = [r["flat_rag"]["metrics"]["correctness"] for r in data]
         g_c = [r["graph_rag"]["metrics"]["correctness"] for r in data]
+        h_c = [r["hybrid_rag"]["metrics"]["correctness"] for r in data]
 
         cost_md = f"""# Cost and Performance Analysis
 
-| Chỉ số (Indicator) | Flat RAG | Graph RAG | Delta (G-F) |
-|---|---|---|---|
-| **Accuracy (Avg)** | {np.mean(f_c):.2f} | {np.mean(g_c):.2f} | {np.mean(g_c)-np.mean(f_c):+.2f} |
-| **Response Time (Avg)** | {np.mean(f_times):.2f}s | {np.mean(g_times):.2f}s | {np.mean(g_times)-np.mean(f_times):+.2f}s |
-| **Latency (P95)** | {np.percentile(f_times, 95):.2f}s | {np.percentile(g_times, 95):.2f}s | {np.percentile(g_times, 95)-np.percentile(f_times, 95):+.2f}s |
-| **Context Size (Avg chars)** | {int(np.mean(f_ctx))} | {int(np.mean(g_ctx))} | {int(np.mean(g_ctx)-np.mean(f_ctx)):+d} |
-| **Faithfulness (Avg)** | {np.mean([r['flat_rag']['metrics']['faithfulness'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['faithfulness'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['faithfulness'] for r in data])-np.mean([r['flat_rag']['metrics']['faithfulness'] for r in data]):+.2f} |
-| **No-Hallucination (Avg)** | {np.mean([r['flat_rag']['metrics']['no_hallucination'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['no_hallucination'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['no_hallucination'] for r in data])-np.mean([r['flat_rag']['metrics']['no_hallucination'] for r in data]):+.2f} |
+| Chỉ số (Indicator) | Flat RAG | Graph RAG | Hybrid RAG | Delta Best-F |
+|---|---|---|---|---|
+| **Accuracy (Avg)** | {np.mean(f_c):.2f} | {np.mean(g_c):.2f} | {np.mean(h_c):.2f} | - |
+| **Response Time (Avg)** | {np.mean(f_times):.2f}s | {np.mean(g_times):.2f}s | {np.mean(h_times):.2f}s | - |
+| **Latency (P95)** | {np.percentile(f_times, 95):.2f}s | {np.percentile(g_times, 95):.2f}s | {np.percentile(h_times, 95):.2f}s | - |
+| **Context Size (Avg chars)** | {int(np.mean(f_ctx))} | {int(np.mean(g_ctx))} | {int(np.mean(h_ctx))} | - |
+| **Faithfulness (Avg)** | {np.mean([r['flat_rag']['metrics']['faithfulness'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['faithfulness'] for r in data]):.2f} | {np.mean([r['hybrid_rag']['metrics']['faithfulness'] for r in data]):.2f} | - |
+| **No-Hallucination (Avg)** | {np.mean([r['flat_rag']['metrics']['no_hallucination'] for r in data]):.2f} | {np.mean([r['graph_rag']['metrics']['no_hallucination'] for r in data]):.2f} | {np.mean([r['hybrid_rag']['metrics']['no_hallucination'] for r in data]):.2f} | - |
 """
         with open("results/cost_analysis.md", "w", encoding="utf-8") as f: f.write(cost_md)
         print("✅ Reports updated.")

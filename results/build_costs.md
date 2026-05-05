@@ -1,18 +1,5 @@
-# Cost and Performance Analysis
-
-| Chỉ số (Indicator) | Flat RAG | Graph RAG | Hybrid RAG | Delta Best-F |
-|---|---|---|---|---|
-| **Accuracy (Avg)** | 0.53 | 0.82 | 0.87 | - |
-| **Response Time (Avg)** | 3.71s | 9.49s | 8.99s | - |
-| **Latency (P95)** | 7.14s | 16.72s | 18.05s | - |
-| **Context Size (Avg chars)** | 2808 | 7525 | 10356 | - |
-| **Faithfulness (Avg)** | 0.97 | 0.96 | 1.00 | - |
-| **No-Hallucination (Avg)** | 0.97 | 0.97 | 0.80 | - |
-
-
----
-
 # Build Cost Report
+
 | Stage | Time (s) | Input Tokens (est.) | Output Tokens (est.) | Total Tokens (est.) | Notes |
 |---|---:|---:|---:|---:|---|
 | flat_rag_build | 22.18 | 59,297 | 0 | 59,297 | FlatRAG Chroma embedding/index build. Token estimate = corpus tokens embedded. |

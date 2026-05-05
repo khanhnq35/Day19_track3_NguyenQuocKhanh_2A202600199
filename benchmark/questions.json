@@ -1,162 +1,242 @@
 [
-    {
-        "id": 1,
-        "category": "single-hop",
-        "question": "Where is OpenAI headquartered?",
-        "ground_truth": "San Francisco",
-        "relevant_entities": ["OpenAI", "San Francisco"],
-        "hop_count": 1
-    },
-    {
-        "id": 2,
-        "category": "single-hop",
-        "question": "Who is the CEO of OpenAI?",
-        "ground_truth": "Sam Altman",
-        "relevant_entities": ["Sam Altman", "OpenAI"],
-        "hop_count": 1
-    },
-    {
-        "id": 3,
-        "category": "single-hop",
-        "question": "What products did OpenAI develop?",
-        "ground_truth": "GPT (generative pre-trained transformer), DALL-E, Sora, ChatGPT",
-        "relevant_entities": ["OpenAI", "GPT", "DALL-E", "Sora", "ChatGPT"],
-        "hop_count": 1
-    },
-    {
-        "id": 4,
-        "category": "single-hop",
-        "question": "When was OpenAI founded?",
-        "ground_truth": "2015",
-        "relevant_entities": ["OpenAI"],
-        "hop_count": 1
-    },
-    {
-        "id": 5,
-        "category": "single-hop",
-        "question": "Who founded Google?",
-        "ground_truth": "Larry Page and Sergey Brin",
-        "relevant_entities": ["Google", "Larry Page", "Sergey Brin"],
-        "hop_count": 1
-    },
-    {
-        "id": 6,
-        "category": "single-hop",
-        "question": "What cloud platform does OpenAI use?",
-        "ground_truth": "Microsoft Azure",
-        "relevant_entities": ["OpenAI", "Azure"],
-        "hop_count": 1
-    },
-    {
-        "id": 7,
-        "category": "single-hop",
-        "question": "Who is the CEO of Alphabet Inc.?",
-        "ground_truth": "Sundar Pichai",
-        "relevant_entities": ["Alphabet Inc.", "Sundar Pichai"],
-        "hop_count": 1
-    },
-    {
-        "id": 8,
-        "category": "single-hop",
-        "question": "What is the parent company of Google?",
-        "ground_truth": "Alphabet Inc.",
-        "relevant_entities": ["Google", "Alphabet Inc."],
-        "hop_count": 1
-    },
-    {
-        "id": 9,
-        "category": "single-hop",
-        "question": "What quantum computing chip did Alphabet unveil in December 2024?",
-        "ground_truth": "Willow",
-        "relevant_entities": ["Alphabet Inc.", "Willow"],
-        "hop_count": 1
-    },
-    {
-        "id": 10,
-        "category": "single-hop",
-        "question": "Who are the co-founders of OpenAI besides Sam Altman?",
-        "ground_truth": "Elon Musk, Ilya Sutskever, Greg Brockman, Trevor Blackwell, Vicki Cheung, Andrej Karpathy, Durk Kingma, John Schulman, Pamela Vagata, Wojciech Zaremba",
-        "relevant_entities": ["OpenAI", "Elon Musk", "Ilya Sutskever", "Greg Brockman"],
-        "hop_count": 1
-    },
-    {
-        "id": 11,
-        "category": "multi-hop",
-        "question": "Who is the CEO of the company that developed ChatGPT?",
-        "ground_truth": "Sam Altman (CEO of OpenAI, which developed ChatGPT)",
-        "relevant_entities": ["ChatGPT", "OpenAI", "Sam Altman"],
-        "hop_count": 2
-    },
-    {
-        "id": 12,
-        "category": "multi-hop",
-        "question": "Which company invested over $13 billion into the developer of DALL-E?",
-        "ground_truth": "Microsoft (invested $13B+ into OpenAI, which developed DALL-E)",
-        "relevant_entities": ["DALL-E", "OpenAI", "Microsoft"],
-        "hop_count": 2
-    },
-    {
-        "id": 13,
-        "category": "multi-hop",
-        "question": "What cloud platform does the company that created GPT models use for its infrastructure?",
-        "ground_truth": "Microsoft Azure (OpenAI created GPT and uses Azure)",
-        "relevant_entities": ["GPT", "OpenAI", "Azure"],
-        "hop_count": 2
-    },
-    {
-        "id": 14,
-        "category": "multi-hop",
-        "question": "Who is the CEO of the parent company that owns Google?",
-        "ground_truth": "Sundar Pichai (CEO of Alphabet Inc., which owns Google)",
-        "relevant_entities": ["Google", "Alphabet Inc.", "Sundar Pichai"],
-        "hop_count": 2
-    },
-    {
-        "id": 15,
-        "category": "multi-hop",
-        "question": "Which company co-founded by Elon Musk is headquartered in San Francisco and works on AI safety?",
-        "ground_truth": "OpenAI (co-founded by Elon Musk, headquartered in San Francisco, focused on AI safety and AGI)",
-        "relevant_entities": ["Elon Musk", "OpenAI", "San Francisco"],
-        "hop_count": 2
-    },
-    {
-        "id": 16,
-        "category": "multi-hop",
-        "question": "What percentage stake does Microsoft hold in the company that released ChatGPT after its 2025 restructuring?",
-        "ground_truth": "Microsoft holds a 27% stake in OpenAI Group PBC (the company behind ChatGPT) after the 2025 restructuring",
-        "relevant_entities": ["ChatGPT", "OpenAI", "Microsoft", "27%"],
-        "hop_count": 2
-    },
-    {
-        "id": 17,
-        "category": "multi-hop",
-        "question": "Who replaced Larry Page as CEO of Google after the Alphabet restructuring in 2015?",
-        "ground_truth": "Sundar Pichai replaced Larry Page as CEO of Google when Alphabet was created in 2015",
-        "relevant_entities": ["Larry Page", "Google", "Alphabet Inc.", "Sundar Pichai"],
-        "hop_count": 2
-    },
-    {
-        "id": 18,
-        "category": "complex-reasoning",
-        "question": "Trace the chain: Who is the CEO of the company that developed the AI model powering Microsoft Copilot, and what cloud platform does that company use?",
-        "ground_truth": "Sam Altman is CEO of OpenAI, which developed the GPT models powering Microsoft Copilot. OpenAI uses Microsoft Azure for its cloud infrastructure.",
-        "relevant_entities": ["Microsoft Copilot", "GPT", "OpenAI", "Sam Altman", "Azure"],
-        "hop_count": 3
-    },
-    {
-        "id": 19,
-        "category": "complex-reasoning",
-        "question": "OpenAI was co-founded by someone who also leads SpaceX and Tesla. This person also invested in OpenAI. Who is this person, and what was OpenAI's stated mission regarding AGI?",
-        "ground_truth": "Elon Musk co-founded and invested in OpenAI. He leads SpaceX and Tesla. OpenAI's mission was ensuring that AGI 'benefits all of humanity'.",
-        "relevant_entities": ["Elon Musk", "SpaceX", "Tesla", "OpenAI", "AGI"],
-        "hop_count": 3
-    },
-    {
-        "id": 20,
-        "category": "complex-reasoning",
-        "question": "Alphabet and OpenAI both have connections to Microsoft. How does Microsoft's relationship differ with each of these two companies?",
-        "ground_truth": "Microsoft invested over $13 billion into OpenAI and holds a 27% stake in OpenAI Group PBC, providing Azure cloud resources. Alphabet is a competitor to Microsoft (rival tech giants); Microsoft does not have an investment relationship with Alphabet.",
-        "relevant_entities": ["Microsoft", "OpenAI", "Alphabet Inc.", "Azure"],
-        "hop_count": 3
-    }
+  {
+    "id": 1,
+    "category": "single-hop",
+    "question": "Where is OpenAI headquartered?",
+    "ground_truth": "OpenAI is headquartered in San Francisco.",
+    "relevant_entities": ["OpenAI", "San Francisco"],
+    "hop_count": 1
+  },
+  {
+    "id": 2,
+    "category": "single-hop",
+    "question": "Who is the CEO of OpenAI?",
+    "ground_truth": "Sam Altman is the CEO of OpenAI.",
+    "relevant_entities": ["OpenAI", "Sam Altman"],
+    "hop_count": 1
+  },
+  {
+    "id": 3,
+    "category": "single-hop",
+    "question": "Which company developed ChatGPT?",
+    "ground_truth": "OpenAI developed ChatGPT.",
+    "relevant_entities": ["ChatGPT", "OpenAI"],
+    "hop_count": 1
+  },
+  {
+    "id": 4,
+    "category": "single-hop",
+    "question": "What is Google's parent company?",
+    "ground_truth": "Alphabet Inc. is Google's parent holding company.",
+    "relevant_entities": ["Google", "Alphabet Inc."],
+    "hop_count": 1
+  },
+  {
+    "id": 5,
+    "category": "single-hop",
+    "question": "Who founded Google?",
+    "ground_truth": "Google was founded by Larry Page and Sergey Brin.",
+    "relevant_entities": ["Google", "Larry Page", "Sergey Brin"],
+    "hop_count": 1
+  },
+  {
+    "id": 6,
+    "category": "single-hop",
+    "question": "Who is the CEO of Alphabet Inc.?",
+    "ground_truth": "Sundar Pichai is the CEO of Alphabet Inc.",
+    "relevant_entities": ["Alphabet Inc.", "Sundar Pichai"],
+    "hop_count": 1
+  },
+  {
+    "id": 7,
+    "category": "single-hop",
+    "question": "Which AI models are Anthropic's flagship product line?",
+    "ground_truth": "Anthropic's flagship product line is the Claude series of large language models.",
+    "relevant_entities": ["Anthropic", "Claude"],
+    "hop_count": 1
+  },
+  {
+    "id": 8,
+    "category": "single-hop",
+    "question": "Who are the co-founders and leaders of Anthropic mentioned in the corpus?",
+    "ground_truth": "Anthropic was founded by former OpenAI members including siblings Daniela Amodei and Dario Amodei; Daniela Amodei is president and Dario Amodei is CEO.",
+    "relevant_entities": ["Anthropic", "Daniela Amodei", "Dario Amodei"],
+    "hop_count": 1
+  },
+  {
+    "id": 9,
+    "category": "single-hop",
+    "question": "Which company develops GPUs and CUDA and is headquartered in Santa Clara?",
+    "ground_truth": "Nvidia develops GPUs and CUDA and is headquartered in Santa Clara, California.",
+    "relevant_entities": ["Nvidia", "CUDA", "Santa Clara"],
+    "hop_count": 1
+  },
+  {
+    "id": 10,
+    "category": "single-hop",
+    "question": "What architecture did Databricks develop for managing structured and unstructured data?",
+    "ground_truth": "Databricks developed the data lakehouse architecture.",
+    "relevant_entities": ["Databricks", "data lakehouse"],
+    "hop_count": 1
+  },
+  {
+    "id": 11,
+    "category": "multi-hop",
+    "question": "Who is the CEO of the company that developed ChatGPT?",
+    "ground_truth": "Sam Altman is the CEO of OpenAI, and OpenAI developed ChatGPT.",
+    "relevant_entities": ["ChatGPT", "OpenAI", "Sam Altman"],
+    "hop_count": 2
+  },
+  {
+    "id": 12,
+    "category": "multi-hop",
+    "question": "Which company invested more than $13 billion into the company that developed DALL-E?",
+    "ground_truth": "Microsoft invested more than $13 billion into OpenAI, which developed DALL-E.",
+    "relevant_entities": ["DALL-E", "OpenAI", "Microsoft"],
+    "hop_count": 2
+  },
+  {
+    "id": 13,
+    "category": "multi-hop",
+    "question": "What cloud platform does the developer of GPT use for computing resources?",
+    "ground_truth": "OpenAI developed GPT and uses Microsoft Azure cloud computing resources.",
+    "relevant_entities": ["GPT", "OpenAI", "Microsoft Azure"],
+    "hop_count": 2
+  },
+  {
+    "id": 14,
+    "category": "multi-hop",
+    "question": "Who is the CEO of the parent company of Google?",
+    "ground_truth": "Sundar Pichai is the CEO of Alphabet Inc., Google's parent company.",
+    "relevant_entities": ["Google", "Alphabet Inc.", "Sundar Pichai"],
+    "hop_count": 2
+  },
+  {
+    "id": 15,
+    "category": "multi-hop",
+    "question": "Which company acquired DeepMind, and which larger holding company does DeepMind serve as a subsidiary of?",
+    "ground_truth": "Google acquired DeepMind, and Google DeepMind serves as a subsidiary of Alphabet Inc.",
+    "relevant_entities": ["DeepMind", "Google", "Alphabet Inc."],
+    "hop_count": 2
+  },
+  {
+    "id": 16,
+    "category": "multi-hop",
+    "question": "Who founded the company that developed AlphaGo?",
+    "ground_truth": "DeepMind developed AlphaGo; DeepMind was founded by Demis Hassabis, Shane Legg, and Mustafa Suleyman.",
+    "relevant_entities": ["AlphaGo", "DeepMind", "Demis Hassabis", "Shane Legg", "Mustafa Suleyman"],
+    "hop_count": 2
+  },
+  {
+    "id": 17,
+    "category": "multi-hop",
+    "question": "Which company invested in Anthropic and also provides the cloud service used by Anthropic as its primary cloud provider?",
+    "ground_truth": "Amazon invested in Anthropic, and Anthropic uses Amazon Web Services (AWS) as its primary cloud provider.",
+    "relevant_entities": ["Amazon", "Anthropic", "Amazon Web Services", "AWS"],
+    "hop_count": 2
+  },
+  {
+    "id": 18,
+    "category": "multi-hop",
+    "question": "Which AI company founded by former OpenAI employees later partnered with Google for up to one million TPUs?",
+    "ground_truth": "Anthropic was founded by former OpenAI employees and later announced a cloud partnership with Google giving it access to up to one million Google TPUs.",
+    "relevant_entities": ["Anthropic", "OpenAI", "Google", "TPU"],
+    "hop_count": 2
+  },
+  {
+    "id": 19,
+    "category": "multi-hop",
+    "question": "Which company founded by original creators of Apache Spark partnered with OpenAI in a $100 million deal?",
+    "ground_truth": "Databricks was founded by original creators of Apache Spark and entered a $100 million partnership with OpenAI to incorporate OpenAI's LLMs into its platform.",
+    "relevant_entities": ["Databricks", "Apache Spark", "OpenAI"],
+    "hop_count": 2
+  },
+  {
+    "id": 20,
+    "category": "multi-hop",
+    "question": "Which company invested $16 million in Mistral AI, and what country is Mistral AI based in?",
+    "ground_truth": "Microsoft invested $16 million in Mistral AI, which is a French AI company headquartered in Paris.",
+    "relevant_entities": ["Microsoft", "Mistral AI", "France", "Paris"],
+    "hop_count": 2
+  },
+  {
+    "id": 21,
+    "category": "complex-reasoning",
+    "question": "Compare Microsoft's relationships with OpenAI and Mistral AI using investment amount and strategic role.",
+    "ground_truth": "Microsoft invested over $13 billion into OpenAI and provides Azure cloud computing resources, making the OpenAI relationship deep and infrastructure-heavy. Microsoft invested $16 million in Mistral AI, which is much smaller and described as an investment rather than the same large cloud-infrastructure partnership.",
+    "relevant_entities": ["Microsoft", "OpenAI", "Azure", "Mistral AI"],
+    "hop_count": 3
+  },
+  {
+    "id": 22,
+    "category": "complex-reasoning",
+    "question": "How do OpenAI and Anthropic differ in origin, leadership, and flagship products?",
+    "ground_truth": "OpenAI was founded in 2015 by founders including Sam Altman and Elon Musk and is led by CEO Sam Altman; it developed products such as GPT, DALL-E, Sora, and ChatGPT. Anthropic was founded in 2021 by former OpenAI employees including Daniela and Dario Amodei; Dario Amodei is CEO, Daniela Amodei is president, and its flagship product line is Claude.",
+    "relevant_entities": ["OpenAI", "Sam Altman", "Elon Musk", "Anthropic", "Dario Amodei", "Daniela Amodei", "Claude"],
+    "hop_count": 3
+  },
+  {
+    "id": 23,
+    "category": "complex-reasoning",
+    "question": "Trace the Alphabet AI chain from Google to DeepMind to Gemini, and explain why GraphRAG should retrieve this better than Flat RAG.",
+    "ground_truth": "Google acquired DeepMind in 2014; DeepMind became Google DeepMind and serves under Alphabet Inc. Google DeepMind became responsible for developing Gemini and other generative AI tools. GraphRAG can connect Google, DeepMind, Alphabet, and Gemini through relationships, while Flat RAG may miss parts if they are split across chunks.",
+    "relevant_entities": ["Alphabet Inc.", "Google", "DeepMind", "Google DeepMind", "Gemini"],
+    "hop_count": 3
+  },
+  {
+    "id": 24,
+    "category": "complex-reasoning",
+    "question": "Which two founders of Google became associated with Alphabet after the restructuring, and what role did Sundar Pichai take across Google and Alphabet?",
+    "ground_truth": "Larry Page and Sergey Brin founded Google and remained employees, board members, and controlling shareholders of Alphabet after stepping down from executive posts. Sundar Pichai became CEO of Google in 2015 and also became CEO of Alphabet in 2019.",
+    "relevant_entities": ["Larry Page", "Sergey Brin", "Google", "Alphabet Inc.", "Sundar Pichai"],
+    "hop_count": 3
+  },
+  {
+    "id": 25,
+    "category": "complex-reasoning",
+    "question": "Compare Databricks' AI partnerships with Anthropic, Alphabet, and OpenAI by partner and purpose.",
+    "ground_truth": "Databricks entered a five-year partnership with Anthropic to incorporate Anthropic AI products into its platform, a four-year partnership with Alphabet to incorporate Gemini into Databricks, and a $100 million partnership with OpenAI to incorporate OpenAI's LLMs into the Databricks platform.",
+    "relevant_entities": ["Databricks", "Anthropic", "Alphabet", "Gemini", "OpenAI"],
+    "hop_count": 3
+  },
+  {
+    "id": 26,
+    "category": "complex-reasoning",
+    "question": "Compare Amazon's strategic relationships with Anthropic and OpenAI based on the corpus.",
+    "ground_truth": "Amazon has a deep strategic partnership with Anthropic, became a minority stakeholder, invested up to $4 billion, and Anthropic uses AWS as its primary cloud provider. Amazon also entered talks with OpenAI in January 2026 to invest up to $50 billion, but that is described as talks rather than an established partnership in the corpus.",
+    "relevant_entities": ["Amazon", "Anthropic", "AWS", "OpenAI"],
+    "hop_count": 3
+  },
+  {
+    "id": 27,
+    "category": "complex-reasoning",
+    "question": "How do Nvidia and Google differ in their AI hardware roles according to the corpus?",
+    "ground_truth": "Nvidia controls more than 80% of the market for GPUs used in training and deploying AI models and provides chips for over 75% of the TOP500 supercomputers. Google is associated with TPUs and Google Quantum AI, and Anthropic's Google cloud partnership gives it access to up to one million Google TPUs.",
+    "relevant_entities": ["Nvidia", "GPU", "Google", "TPU", "Anthropic"],
+    "hop_count": 3
+  },
+  {
+    "id": 28,
+    "category": "complex-reasoning",
+    "question": "Using the corpus, explain how OpenAI, Anthropic, Mistral AI, and Databricks show different AI company archetypes.",
+    "ground_truth": "OpenAI is an AI research organization with GPT, DALL-E, Sora, and ChatGPT and deep Microsoft/Azure backing. Anthropic is an AI safety-focused company founded by former OpenAI employees with Claude and major Amazon/Google/Microsoft partnerships. Mistral AI is a French AI company known for open-weight and proprietary models, including Le Chat and Mistral model families. Databricks is a cloud data and AI platform company built from Apache Spark creators, lakehouse architecture, and partnerships with Anthropic, Alphabet/Gemini, and OpenAI.",
+    "relevant_entities": ["OpenAI", "Anthropic", "Mistral AI", "Databricks", "Claude", "Le Chat", "Apache Spark"],
+    "hop_count": 3
+  },
+  {
+    "id": 29,
+    "category": "complex-reasoning",
+    "question": "What chain connects Elon Musk to OpenAI and Tesla, and why can this question test hallucination risk?",
+    "ground_truth": "Elon Musk co-founded and invested in OpenAI, and he led Tesla's first funding round, became Tesla chairman, later became CEO, and is allowed by settlement to call himself a Tesla co-founder. This tests hallucination risk because the system must distinguish OpenAI founding from Tesla founding/incorporation details instead of claiming Musk originally incorporated Tesla.",
+    "relevant_entities": ["Elon Musk", "OpenAI", "Tesla", "Martin Eberhard", "Marc Tarpenning"],
+    "hop_count": 3
+  },
+  {
+    "id": 30,
+    "category": "complex-reasoning",
+    "question": "Across OpenAI, Alphabet, Anthropic, Amazon, and Databricks, which relationships are ownership/control relationships versus product or platform partnerships?",
+    "ground_truth": "Ownership/control relationships include Alphabet being Google's parent company and OpenAI's nonprofit/Foundation controlling or holding stake in OpenAI Group PBC after restructuring. Product or platform partnerships include Microsoft providing Azure to OpenAI, Amazon/AWS partnering with Anthropic, Google providing TPU access to Anthropic, and Databricks incorporating Anthropic products, Alphabet's Gemini, and OpenAI LLMs into its platform.",
+    "relevant_entities": ["OpenAI", "Alphabet", "Google", "Anthropic", "Amazon", "AWS", "Databricks", "Gemini", "Microsoft Azure"],
+    "hop_count": 3
+  }
 ]

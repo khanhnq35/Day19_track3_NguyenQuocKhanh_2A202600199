@@ -139,12 +139,12 @@ Xây dựng query engine: nhận câu hỏi → extract entities → graph trave
 - [x] Test thành công (và xác nhận bị giới hạn so với GraphRAG)
 
 #### 4.3 Tạo 20 Benchmark Questions (`benchmark/questions.json`)
-- [ ] 10 câu single-hop (dễ, cả Flat RAG lẫn GraphRAG nên trả lời được)
-- [ ] 7 câu multi-hop (trung bình, GraphRAG có lợi thế)
+- [x] 10 câu single-hop (dễ, cả Flat RAG lẫn GraphRAG nên trả lời được)
+- [x] 7 câu multi-hop (trung bình, GraphRAG có lợi thế)
   - VD: "CEO của công ty đã mua lại Instagram là ai?"
-- [ ] 3 câu complex reasoning (khó, cần traverse ≥3 hop)
+- [x] 3 câu complex reasoning (khó, cần traverse ≥3 hop)
   - VD: "Những sản phẩm nào sử dụng technology do công ty của Sam Altman phát triển?"
-- [ ] Mỗi câu kèm `ground_truth_answer`
+- [x] Mỗi câu kèm `ground_truth_answer`
 
 ### Deliverables
 - Query engine hoạt động end-to-end
