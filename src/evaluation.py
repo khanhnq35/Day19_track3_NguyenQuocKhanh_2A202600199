@@ -71,6 +71,12 @@ class Evaluator:
 
         print(f"🚀 Chạy benchmark (4 luồng song song) cho {len(questions)} câu hỏi...")
         evaluation_data = []
+
+        # ChromaDB Rust client không ổn định khi 4 luồng cùng gọi load_db().
+        # Load vectorstore một lần ở main thread trước, sau đó các worker chỉ đọc.
+        if not self.flat_engine.vectorstore:
+            print("📦 Preload Flat RAG vectorstore...")
+            self.flat_engine.load_db()
         
         with ThreadPoolExecutor(max_workers=4) as executor:
             future_to_q = {executor.submit(self.process_single_question, q): q for q in questions}
