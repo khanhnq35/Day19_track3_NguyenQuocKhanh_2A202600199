@@ -1,0 +1,522 @@
+[
+    {
+        "id": 1,
+        "category": "single-hop",
+        "question": "Where is OpenAI headquartered?",
+        "ground_truth": "San Francisco",
+        "graph_rag": {
+            "answer": "Tôi không biết OpenAI có trụ sở chính ở đâu.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.600993871688843,
+            "context_len": 7100
+        },
+        "flat_rag": {
+            "answer": "OpenAI có trụ sở chính tại San Francisco. Cụ thể hơn, nó từng có trụ sở tại Tòa nhà Pioneer ở Mission District, San Francisco.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.355709075927734,
+            "context_len": 2647
+        }
+    },
+    {
+        "id": 2,
+        "category": "single-hop",
+        "question": "Who is the CEO of OpenAI?",
+        "ground_truth": "Sam Altman",
+        "graph_rag": {
+            "answer": "Sam Altman là CEO của OpenAI.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.737514019012451,
+            "context_len": 7100
+        },
+        "flat_rag": {
+            "answer": "Dựa trên ngữ cảnh được cung cấp, Sam Altman đã bị hội đồng quản trị của OpenAI loại bỏ khỏi vị trí CEO vào tháng 11 năm 2023 nhưng đã được phục hồi chức vụ 5 ngày sau đó.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.3954970836639404,
+            "context_len": 3008
+        }
+    },
+    {
+        "id": 3,
+        "category": "single-hop",
+        "question": "What products did OpenAI develop?",
+        "ground_truth": "GPT (generative pre-trained transformer), DALL-E, Sora, ChatGPT",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin từ đồ thị, tôi không có thông tin về sản phẩm mà OpenAI đã phát triển.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.7861058712005615,
+            "context_len": 7100
+        },
+        "flat_rag": {
+            "answer": "OpenAI đã phát triển họ mô hình ngôn ngữ lớn generative pre-trained transformer (GPT), dòng mô hình chuyển văn bản thành hình ảnh DALL-E, và dòng mô hình chuyển văn bản thành video Sora. Họ cũng đã phát hành ChatGPT vào tháng 11 năm 2022.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.894727945327759,
+            "context_len": 2729
+        }
+    },
+    {
+        "id": 4,
+        "category": "single-hop",
+        "question": "When was OpenAI founded?",
+        "ground_truth": "2015",
+        "graph_rag": {
+            "answer": "Tôi không biết OpenAI được thành lập khi nào dựa trên thông tin trong đồ thị.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.688524961471558,
+            "context_len": 7100
+        },
+        "flat_rag": {
+            "answer": "OpenAI được thành lập vào tháng 12 năm 2015.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.1995768547058105,
+            "context_len": 2607
+        }
+    },
+    {
+        "id": 5,
+        "category": "single-hop",
+        "question": "Who founded Google?",
+        "ground_truth": "Larry Page and Sergey Brin",
+        "graph_rag": {
+            "answer": "Google được thành lập bởi Larry Page và Sergey Brin.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 0.5,
+                "no_hallucination": 0.0
+            },
+            "time": 5.445603847503662,
+            "context_len": 6603
+        },
+        "flat_rag": {
+            "answer": "Google được thành lập bởi Larry Page và Sergey Brin.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.562896728515625,
+            "context_len": 2708
+        }
+    },
+    {
+        "id": 6,
+        "category": "single-hop",
+        "question": "What cloud platform does OpenAI use?",
+        "ground_truth": "Microsoft Azure",
+        "graph_rag": {
+            "answer": "Tôi không biết. Thông tin trong đồ thị không chỉ ra OpenAI sử dụng nền tảng đám mây nào.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.096901893615723,
+            "context_len": 7100
+        },
+        "flat_rag": {
+            "answer": "OpenAI sử dụng nền tảng đám mây Microsoft Azure.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.088296890258789,
+            "context_len": 3038
+        }
+    },
+    {
+        "id": 7,
+        "category": "single-hop",
+        "question": "Who is the CEO of Alphabet Inc.?",
+        "ground_truth": "Sundar Pichai",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin được cung cấp, có hai cá nhân được đề cập là CEO của Alphabet Inc.: Sergey Brin và Larry Page. Do đó, không thể xác định một CEO duy nhất từ đồ thị này.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 14.130434036254883,
+            "context_len": 6761
+        },
+        "flat_rag": {
+            "answer": "CEO của Alphabet Inc. là Sundar Pichai.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 1.8648271560668945,
+            "context_len": 2719
+        }
+    },
+    {
+        "id": 8,
+        "category": "single-hop",
+        "question": "What is the parent company of Google?",
+        "ground_truth": "Alphabet Inc.",
+        "graph_rag": {
+            "answer": "Công ty mẹ của Google là Alphabet Inc.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.7336931228637695,
+            "context_len": 6603
+        },
+        "flat_rag": {
+            "answer": "Công ty mẹ của Google là Alphabet Inc.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.2336559295654297,
+            "context_len": 2495
+        }
+    },
+    {
+        "id": 9,
+        "category": "single-hop",
+        "question": "What quantum computing chip did Alphabet unveil in December 2024?",
+        "ground_truth": "Willow",
+        "graph_rag": {
+            "answer": "Tôi không có thông tin về việc Alphabet đã công bố chip điện toán lượng tử nào vào tháng 12 năm 2024 trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.11960220336914,
+            "context_len": 2547
+        },
+        "flat_rag": {
+            "answer": "Alphabet đã ra mắt chip điện toán lượng tử mới có tên là Willow vào tháng 12 năm 2024.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.764418840408325,
+            "context_len": 2793
+        }
+    },
+    {
+        "id": 10,
+        "category": "single-hop",
+        "question": "Who are the co-founders of OpenAI besides Sam Altman?",
+        "ground_truth": "Elon Musk, Ilya Sutskever, Greg Brockman, Trevor Blackwell, Vicki Cheung, Andrej Karpathy, Durk Kingma, John Schulman, Pamela Vagata, Wojciech Zaremba",
+        "graph_rag": {
+            "answer": "Ngoài Sam Altman, các đồng sáng lập của OpenAI là:\n*   Elon Musk\n*   Wojciech Zaremba\n*   Durk Kingma\n*   John Schulman\n*   Greg Brockman\n*   Pamela Vagata\n*   Trevor Blackwell\n*   Ilya Sutskever\n*   Vicki Cheung\n*   Andrej Karpathy",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.531927824020386,
+            "context_len": 13810
+        },
+        "flat_rag": {
+            "answer": "Ngoài Sam Altman, các đồng sáng lập của OpenAI bao gồm:\n\n*   Greg Brockman\n*   Elon Musk\n*   Jessica Livingston\n*   Peter Thiel\n*   Microsoft\n*   Amazon Web Services\n*   Infosys\n*   YC Research\n*   Ilya Sutskever\n*   Trevor Blackwell\n*   Vicki Cheung\n*   Andrej Karpathy\n*   Durk Kingma\n*   John Schulman\n*   Pamela Vagata\n*   Wojciech Zaremba",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.52883505821228,
+            "context_len": 2585
+        }
+    },
+    {
+        "id": 11,
+        "category": "multi-hop",
+        "question": "Who is the CEO of the company that developed ChatGPT?",
+        "ground_truth": "Sam Altman (CEO of OpenAI, which developed ChatGPT)",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin từ đồ thị, Sam Altman là CEO của OpenAI, công ty đã phát triển ChatGPT.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 5.465618133544922,
+            "context_len": 3140
+        },
+        "flat_rag": {
+            "answer": "Sam Altman là Giám đốc điều hành (CEO) của OpenAI, công ty đã phát triển ChatGPT.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.748274326324463,
+            "context_len": 2813
+        }
+    },
+    {
+        "id": 12,
+        "category": "multi-hop",
+        "question": "Which company invested over $13 billion into the developer of DALL-E?",
+        "ground_truth": "Microsoft (invested $13B+ into OpenAI, which developed DALL-E)",
+        "graph_rag": {
+            "answer": "Tôi không biết. Thông tin về công ty đã đầu tư hơn 13 tỷ đô la vào nhà phát triển của DALL-E không có trong đồ thị được cung cấp. Đồ thị chỉ cho biết OpenAI đã đầu tư vào các thực thể khác, chứ không phải ai đã đầu tư vào OpenAI.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.8
+            },
+            "time": 6.283243894577026,
+            "context_len": 2152
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 0.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.8186278343200684,
+            "context_len": 2335
+        }
+    },
+    {
+        "id": 13,
+        "category": "multi-hop",
+        "question": "What cloud platform does the company that created GPT models use for its infrastructure?",
+        "ground_truth": "Microsoft Azure (OpenAI created GPT and uses Azure)",
+        "graph_rag": {
+            "answer": "Xin lỗi, tôi không tìm thấy thông tin liên quan trong đồ thị tri thức.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.4550318717956543,
+            "context_len": 0
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Thông tin về nền tảng đám mây mà công ty tạo ra các mô hình GPT sử dụng cho cơ sở hạ tầng của họ không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.944251298904419,
+            "context_len": 2895
+        }
+    },
+    {
+        "id": 14,
+        "category": "multi-hop",
+        "question": "Who is the CEO of the parent company that owns Google?",
+        "ground_truth": "Sundar Pichai (CEO of Alphabet Inc., which owns Google)",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin trong đồ thị:\n\nAlphabet Inc. là công ty mẹ sở hữu Google.\nSundar Pichai là CEO của Alphabet Inc.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.915729999542236,
+            "context_len": 6603
+        },
+        "flat_rag": {
+            "answer": "Sundar Pichai.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.1568820476531982,
+            "context_len": 2775
+        }
+    },
+    {
+        "id": 15,
+        "category": "multi-hop",
+        "question": "Which company co-founded by Elon Musk is headquartered in San Francisco and works on AI safety?",
+        "ground_truth": "OpenAI (co-founded by Elon Musk, headquartered in San Francisco, focused on AI safety and AGI)",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin từ đồ thị:\n- Elon Musk CO_FOUNDED OpenAI.\n- OpenAI HEADQUARTERED_IN San Francisco.\n- OpenAI DEVELOPED Sora, generative pre-trained transformer (GPT), DALL-E, ChatGPT, đây là các sản phẩm liên quan đến AI. Mặc dù đồ thị không trực tiếp nói \"works on AI safety\", nhưng OpenAI là một tổ chức nổi tiếng về nghiên cứu và phát triển AI, bao gồm cả các khía cạnh an toàn của AI.\n\nVì vậy, công ty đó là **OpenAI**.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 0.8,
+                "no_hallucination": 0.7
+            },
+            "time": 5.810593843460083,
+            "context_len": 6663
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Ngữ cảnh được cung cấp không nói rõ công ty nào được Elon Musk đồng sáng lập, có trụ sở tại San Francisco và hoạt động về an toàn AI. Mặc dù có đề cập đến mối quan tâm của Elon Musk về an toàn AI và sau đó là sứ mệnh của OpenAI, nhưng không có thông tin trực tiếp nói rằng ông là người đồng sáng lập OpenAI trong ngữ cảnh này.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 0.9,
+                "no_hallucination": 1.0
+            },
+            "time": 6.17615270614624,
+            "context_len": 2544
+        }
+    },
+    {
+        "id": 16,
+        "category": "multi-hop",
+        "question": "What percentage stake does Microsoft hold in the company that released ChatGPT after its 2025 restructuring?",
+        "ground_truth": "Microsoft holds a 27% stake in OpenAI Group PBC (the company behind ChatGPT) after the 2025 restructuring",
+        "graph_rag": {
+            "answer": "Tôi không có thông tin về tỷ lệ phần trăm cổ phần mà Microsoft nắm giữ trong công ty đã phát hành ChatGPT sau khi tái cơ cấu vào năm 2025.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 0.0
+            },
+            "time": 6.003552198410034,
+            "context_len": 10807
+        },
+        "flat_rag": {
+            "answer": "Sau khi tái cấu trúc vào năm 2025, Microsoft nắm giữ 27% cổ phần trong OpenAI Group PBC.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.9755032062530518,
+            "context_len": 2967
+        }
+    },
+    {
+        "id": 17,
+        "category": "multi-hop",
+        "question": "Who replaced Larry Page as CEO of Google after the Alphabet restructuring in 2015?",
+        "ground_truth": "Sundar Pichai replaced Larry Page as CEO of Google when Alphabet was created in 2015",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin từ đồ thị:\n\n*   Larry Page là CEO của Google (\"Google CEO_OF Larry Page\").\n*   Alphabet Inc. được thành lập vào năm 2015 (\"Alphabet Inc. FOUNDED_IN 2015\").\n*   Sundar Pichai là CEO của Google (\"Google CEO_OF Sundar Pichai\").\n\nTừ các thông tin này, có thể suy luận rằng Sundar Pichai đã thay thế Larry Page làm CEO của Google sau khi Alphabet được tái cấu trúc vào năm 2015.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 0.7,
+                "no_hallucination": 1.0
+            },
+            "time": 7.243703126907349,
+            "context_len": 16057
+        },
+        "flat_rag": {
+            "answer": "Sundar Pichai đã thay thế Larry Page làm CEO của Google sau khi Alphabet được tái cấu trúc vào năm 2015.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.929725170135498,
+            "context_len": 2985
+        }
+    },
+    {
+        "id": 18,
+        "category": "complex-reasoning",
+        "question": "Trace the chain: Who is the CEO of the company that developed the AI model powering Microsoft Copilot, and what cloud platform does that company use?",
+        "ground_truth": "Sam Altman is CEO of OpenAI, which developed the GPT models powering Microsoft Copilot. OpenAI uses Microsoft Azure for its cloud infrastructure.",
+        "graph_rag": {
+            "answer": "Xin lỗi, tôi không tìm thấy thông tin liên quan trong đồ thị tri thức.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 2.795340061187744,
+            "context_len": 0
+        },
+        "flat_rag": {
+            "answer": "Công ty đã phát triển mô hình AI cung cấp năng lượng cho Microsoft Copilot là OpenAI.\n\nOpenAI sử dụng nền tảng đám mây Microsoft Azure.\n\nThông tin về CEO của OpenAI không có trong ngữ cảnh được cung cấp.",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 3.935288190841675,
+            "context_len": 3306
+        }
+    },
+    {
+        "id": 19,
+        "category": "complex-reasoning",
+        "question": "OpenAI was co-founded by someone who also leads SpaceX and Tesla. This person also invested in OpenAI. Who is this person, and what was OpenAI's stated mission regarding AGI?",
+        "ground_truth": "Elon Musk co-founded and invested in OpenAI. He leads SpaceX and Tesla. OpenAI's mission was ensuring that AGI 'benefits all of humanity'.",
+        "graph_rag": {
+            "answer": "Người này là Elon Musk.\n\nThông tin về sứ mệnh đã nêu của OpenAI liên quan đến AGI không có trong đồ thị được cung cấp.",
+            "metrics": {
+                "correctness": 0.5,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.654856204986572,
+            "context_len": 12175
+        },
+        "flat_rag": {
+            "answer": "Người đồng sáng lập OpenAI, đồng thời là người đứng đầu SpaceX và Tesla, và cũng đã đầu tư vào OpenAI là **Elon Musk**.\n\nNhiệm vụ đã nêu của OpenAI liên quan đến AGI (trí tuệ nhân tạo cấp độ con người) là:\n*   AI \"nên là một phần mở rộng của ý chí cá nhân con người và, theo tinh thần tự do, được phân phối rộng rãi và đồng đều nhất có thể\".\n*   Khi AI cấp độ con người đạt được, \"điều quan trọng là phải có một tổ chức nghiên cứu hàng đầu có thể ưu tiên một kết quả tốt cho tất cả mọi người hơn là lợi ích riêng của mình.\"",
+            "metrics": {
+                "correctness": 1.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 4.477224826812744,
+            "context_len": 3337
+        }
+    },
+    {
+        "id": 20,
+        "category": "complex-reasoning",
+        "question": "Alphabet and OpenAI both have connections to Microsoft. How does Microsoft's relationship differ with each of these two companies?",
+        "ground_truth": "Microsoft invested over $13 billion into OpenAI and holds a 27% stake in OpenAI Group PBC, providing Azure cloud resources. Alphabet is a competitor to Microsoft (rival tech giants); Microsoft does not have an investment relationship with Alphabet.",
+        "graph_rag": {
+            "answer": "Dựa trên thông tin từ đồ thị:\n\n*   **Mối quan hệ giữa Microsoft và OpenAI:** Microsoft đã **ĐẦU TƯ VÀO (INVESTED_IN)** OpenAI.\n*   **Mối quan hệ giữa Microsoft và Alphabet:** Đồ thị không cung cấp thông tin nào về mối quan hệ giữa Microsoft và Alphabet.",
+            "metrics": {
+                "correctness": 0.2,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 8.555662155151367,
+            "context_len": 17315
+        },
+        "flat_rag": {
+            "answer": "Tôi không biết. Ngữ cảnh được cung cấp không đề cập đến Alphabet.",
+            "metrics": {
+                "correctness": 0.0,
+                "faithfulness": 1.0,
+                "no_hallucination": 1.0
+            },
+            "time": 1.864898920059204,
+            "context_len": 3236
+        }
+    }
+]

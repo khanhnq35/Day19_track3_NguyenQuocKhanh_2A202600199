@@ -1,0 +1,162 @@
+[
+    {
+        "id": 1,
+        "category": "single-hop",
+        "question": "Where is OpenAI headquartered?",
+        "ground_truth": "San Francisco",
+        "relevant_entities": ["OpenAI", "San Francisco"],
+        "hop_count": 1
+    },
+    {
+        "id": 2,
+        "category": "single-hop",
+        "question": "Who is the CEO of OpenAI?",
+        "ground_truth": "Sam Altman",
+        "relevant_entities": ["Sam Altman", "OpenAI"],
+        "hop_count": 1
+    },
+    {
+        "id": 3,
+        "category": "single-hop",
+        "question": "What products did OpenAI develop?",
+        "ground_truth": "GPT (generative pre-trained transformer), DALL-E, Sora, ChatGPT",
+        "relevant_entities": ["OpenAI", "GPT", "DALL-E", "Sora", "ChatGPT"],
+        "hop_count": 1
+    },
+    {
+        "id": 4,
+        "category": "single-hop",
+        "question": "When was OpenAI founded?",
+        "ground_truth": "2015",
+        "relevant_entities": ["OpenAI"],
+        "hop_count": 1
+    },
+    {
+        "id": 5,
+        "category": "single-hop",
+        "question": "Who founded Google?",
+        "ground_truth": "Larry Page and Sergey Brin",
+        "relevant_entities": ["Google", "Larry Page", "Sergey Brin"],
+        "hop_count": 1
+    },
+    {
+        "id": 6,
+        "category": "single-hop",
+        "question": "What cloud platform does OpenAI use?",
+        "ground_truth": "Microsoft Azure",
+        "relevant_entities": ["OpenAI", "Azure"],
+        "hop_count": 1
+    },
+    {
+        "id": 7,
+        "category": "single-hop",
+        "question": "Who is the CEO of Alphabet Inc.?",
+        "ground_truth": "Sundar Pichai",
+        "relevant_entities": ["Alphabet Inc.", "Sundar Pichai"],
+        "hop_count": 1
+    },
+    {
+        "id": 8,
+        "category": "single-hop",
+        "question": "What is the parent company of Google?",
+        "ground_truth": "Alphabet Inc.",
+        "relevant_entities": ["Google", "Alphabet Inc."],
+        "hop_count": 1
+    },
+    {
+        "id": 9,
+        "category": "single-hop",
+        "question": "What quantum computing chip did Alphabet unveil in December 2024?",
+        "ground_truth": "Willow",
+        "relevant_entities": ["Alphabet Inc.", "Willow"],
+        "hop_count": 1
+    },
+    {
+        "id": 10,
+        "category": "single-hop",
+        "question": "Who are the co-founders of OpenAI besides Sam Altman?",
+        "ground_truth": "Elon Musk, Ilya Sutskever, Greg Brockman, Trevor Blackwell, Vicki Cheung, Andrej Karpathy, Durk Kingma, John Schulman, Pamela Vagata, Wojciech Zaremba",
+        "relevant_entities": ["OpenAI", "Elon Musk", "Ilya Sutskever", "Greg Brockman"],
+        "hop_count": 1
+    },
+    {
+        "id": 11,
+        "category": "multi-hop",
+        "question": "Who is the CEO of the company that developed ChatGPT?",
+        "ground_truth": "Sam Altman (CEO of OpenAI, which developed ChatGPT)",
+        "relevant_entities": ["ChatGPT", "OpenAI", "Sam Altman"],
+        "hop_count": 2
+    },
+    {
+        "id": 12,
+        "category": "multi-hop",
+        "question": "Which company invested over $13 billion into the developer of DALL-E?",
+        "ground_truth": "Microsoft (invested $13B+ into OpenAI, which developed DALL-E)",
+        "relevant_entities": ["DALL-E", "OpenAI", "Microsoft"],
+        "hop_count": 2
+    },
+    {
+        "id": 13,
+        "category": "multi-hop",
+        "question": "What cloud platform does the company that created GPT models use for its infrastructure?",
+        "ground_truth": "Microsoft Azure (OpenAI created GPT and uses Azure)",
+        "relevant_entities": ["GPT", "OpenAI", "Azure"],
+        "hop_count": 2
+    },
+    {
+        "id": 14,
+        "category": "multi-hop",
+        "question": "Who is the CEO of the parent company that owns Google?",
+        "ground_truth": "Sundar Pichai (CEO of Alphabet Inc., which owns Google)",
+        "relevant_entities": ["Google", "Alphabet Inc.", "Sundar Pichai"],
+        "hop_count": 2
+    },
+    {
+        "id": 15,
+        "category": "multi-hop",
+        "question": "Which company co-founded by Elon Musk is headquartered in San Francisco and works on AI safety?",
+        "ground_truth": "OpenAI (co-founded by Elon Musk, headquartered in San Francisco, focused on AI safety and AGI)",
+        "relevant_entities": ["Elon Musk", "OpenAI", "San Francisco"],
+        "hop_count": 2
+    },
+    {
+        "id": 16,
+        "category": "multi-hop",
+        "question": "What percentage stake does Microsoft hold in the company that released ChatGPT after its 2025 restructuring?",
+        "ground_truth": "Microsoft holds a 27% stake in OpenAI Group PBC (the company behind ChatGPT) after the 2025 restructuring",
+        "relevant_entities": ["ChatGPT", "OpenAI", "Microsoft", "27%"],
+        "hop_count": 2
+    },
+    {
+        "id": 17,
+        "category": "multi-hop",
+        "question": "Who replaced Larry Page as CEO of Google after the Alphabet restructuring in 2015?",
+        "ground_truth": "Sundar Pichai replaced Larry Page as CEO of Google when Alphabet was created in 2015",
+        "relevant_entities": ["Larry Page", "Google", "Alphabet Inc.", "Sundar Pichai"],
+        "hop_count": 2
+    },
+    {
+        "id": 18,
+        "category": "complex-reasoning",
+        "question": "Trace the chain: Who is the CEO of the company that developed the AI model powering Microsoft Copilot, and what cloud platform does that company use?",
+        "ground_truth": "Sam Altman is CEO of OpenAI, which developed the GPT models powering Microsoft Copilot. OpenAI uses Microsoft Azure for its cloud infrastructure.",
+        "relevant_entities": ["Microsoft Copilot", "GPT", "OpenAI", "Sam Altman", "Azure"],
+        "hop_count": 3
+    },
+    {
+        "id": 19,
+        "category": "complex-reasoning",
+        "question": "OpenAI was co-founded by someone who also leads SpaceX and Tesla. This person also invested in OpenAI. Who is this person, and what was OpenAI's stated mission regarding AGI?",
+        "ground_truth": "Elon Musk co-founded and invested in OpenAI. He leads SpaceX and Tesla. OpenAI's mission was ensuring that AGI 'benefits all of humanity'.",
+        "relevant_entities": ["Elon Musk", "SpaceX", "Tesla", "OpenAI", "AGI"],
+        "hop_count": 3
+    },
+    {
+        "id": 20,
+        "category": "complex-reasoning",
+        "question": "Alphabet and OpenAI both have connections to Microsoft. How does Microsoft's relationship differ with each of these two companies?",
+        "ground_truth": "Microsoft invested over $13 billion into OpenAI and holds a 27% stake in OpenAI Group PBC, providing Azure cloud resources. Alphabet is a competitor to Microsoft (rival tech giants); Microsoft does not have an investment relationship with Alphabet.",
+        "relevant_entities": ["Microsoft", "OpenAI", "Alphabet Inc.", "Azure"],
+        "hop_count": 3
+    }
+]
